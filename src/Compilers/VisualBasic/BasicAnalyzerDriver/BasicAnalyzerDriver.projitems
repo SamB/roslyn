@@ -3,7 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>e8f0baa5-7327-43d1-9a51-644e81ae55f1</SharedGUID>
+    <SharedGUID>D5858763-A645-421E-8431-23B3E20B7416</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>BasicAnalyzerDriver</Import_RootNamespace>
