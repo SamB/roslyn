@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' This class provides an easy way to combine a MethodSignatureComparer and a PropertySignatureComparer
     ''' to create a unified MemberSignatureComparer (e.g. for use in a HashSet).

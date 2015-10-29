@@ -4,12 +4,12 @@ Imports System.Collections.Generic
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports System.Runtime.CompilerServices
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Module AccessibilityExtensions
         <Extension()>
         Friend Function ToDiagnosticString(a As Accessibility) As String

@@ -1,8 +1,8 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-Imports Green = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Imports Green = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
 
     Friend Module SyntaxEquivalence
         Friend Function AreEquivalent(before As SyntaxTree, after As SyntaxTree, ignoreChildNode As Func(Of SyntaxKind, Boolean), topLevel As Boolean) As Boolean

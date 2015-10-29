@@ -5,10 +5,10 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' This class implements the region control flow analysis operations.  Region control flow analysis provides

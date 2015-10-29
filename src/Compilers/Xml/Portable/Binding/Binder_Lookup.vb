@@ -7,12 +7,12 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ' Handler the parts of binding for member lookup.
     Partial Friend Class Binder
 
@@ -106,7 +106,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         ' A non-empty SingleLookupResult with the result is returned.
         '
         ' For symbols from outside of this compilation the method also checks 
-        ' if the symbol is marked with 'Microsoft.VisualBasic.Embedded' attribute.
+        ' if the symbol is marked with 'Microsoft.Xml.Embedded' attribute.
         '
         ' If arity passed in is -1, no arity checks are done.
         Friend Function CheckViability(sym As Symbol,
@@ -152,14 +152,14 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 unwrappedSym = asAlias.Target
             End If
 
-            ' Check for external symbols marked with 'Microsoft.VisualBasic.Embedded' attribute
+            ' Check for external symbols marked with 'Microsoft.Xml.Embedded' attribute
             If unwrappedSym.ContainingModule IsNot Me.ContainingModule AndAlso unwrappedSym.IsHiddenByEmbeddedAttribute() Then
                 Return SingleLookupResult.Empty
             End If
 
             If unwrappedSym.Kind = SymbolKind.NamedType AndAlso unwrappedSym.EmbeddedSymbolKind = EmbeddedSymbolKind.EmbeddedAttribute AndAlso
                     Me.SyntaxTree IsNot Nothing AndAlso Me.SyntaxTree.GetEmbeddedKind = EmbeddedSymbolKind.None Then
-                ' Only allow direct access to Microsoft.VisualBasic.Embedded attribute
+                ' Only allow direct access to Microsoft.Xml.Embedded attribute
                 ' from user code if current compilation embeds Vb Core
                 If Not Me.Compilation.Options.EmbedVbCoreRuntime Then
                     Return SingleLookupResult.Empty
@@ -215,15 +215,15 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             If (options And LookupOptions.IgnoreAccessibility) = 0 Then
                 Dim accessCheckResult = CheckAccessibility(unwrappedSym, useSiteDiagnostics, If((options And LookupOptions.UseBaseReferenceAccessibility) <> 0, Nothing, accessThroughType))
                 ' Check if we are in 'MyBase' resolving mode and we need to ignore 'accessThroughType' to make protected members accessed
-                If accessCheckResult <> VisualBasic.AccessCheckResult.Accessible Then
+                If accessCheckResult <> Xml.AccessCheckResult.Accessible Then
                     Return SingleLookupResult.Inaccessible(sym, GetInaccessibleErrorInfo(sym))
                 End If
             End If
 
-            If (options And Global.Microsoft.CodeAnalysis.VisualBasic.LookupOptions.MustNotBeInstance) <> 0 AndAlso sym.IsInstanceMember Then
-                Return Global.Microsoft.CodeAnalysis.VisualBasic.SingleLookupResult.MustNotBeInstance(sym, Global.Microsoft.CodeAnalysis.VisualBasic.ERRID.ERR_ObjectReferenceNotSupplied)
-            ElseIf (options And Global.Microsoft.CodeAnalysis.VisualBasic.LookupOptions.MustBeInstance) <> 0 AndAlso Not sym.IsInstanceMember Then
-                Return Global.Microsoft.CodeAnalysis.VisualBasic.SingleLookupResult.MustBeInstance(sym) ' there is no error message for this 
+            If (options And Global.Microsoft.CodeAnalysis.Xml.LookupOptions.MustNotBeInstance) <> 0 AndAlso sym.IsInstanceMember Then
+                Return Global.Microsoft.CodeAnalysis.Xml.SingleLookupResult.MustNotBeInstance(sym, Global.Microsoft.CodeAnalysis.Xml.ERRID.ERR_ObjectReferenceNotSupplied)
+            ElseIf (options And Global.Microsoft.CodeAnalysis.Xml.LookupOptions.MustBeInstance) <> 0 AndAlso Not sym.IsInstanceMember Then
+                Return Global.Microsoft.CodeAnalysis.Xml.SingleLookupResult.MustBeInstance(sym) ' there is no error message for this 
             End If
 
             Return SingleLookupResult.Good(sym)
@@ -1244,7 +1244,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                 ' We will not reduce extension methods for the purpose of this operation,
                 ' they will still be shared methods.
-                options = options And (Not Global.Microsoft.CodeAnalysis.VisualBasic.LookupOptions.MustBeInstance)
+                options = options And (Not Global.Microsoft.CodeAnalysis.Xml.LookupOptions.MustBeInstance)
 
                 ' Proceed up the chain of binders, collecting names of extension methods
                 Dim currentBinder As Binder = binder

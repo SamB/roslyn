@@ -2,7 +2,7 @@
 
 Imports System.Runtime.CompilerServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Module SpecialTypeExtensions
         <Extension>
         Public Function IsNumericType(this As SpecialType) As Boolean

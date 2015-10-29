@@ -12,11 +12,11 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 Imports Microsoft.CodeAnalysis.Collections
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     ''' <summary>
     ''' Creates red tokens for a stream of text

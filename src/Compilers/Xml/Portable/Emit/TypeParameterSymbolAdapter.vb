@@ -3,9 +3,9 @@
 Imports System.Reflection.Metadata
 Imports Microsoft.Cci
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
+Imports Microsoft.CodeAnalysis.Xml.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Partial Class TypeParameterSymbol
         Implements IGenericParameterReference

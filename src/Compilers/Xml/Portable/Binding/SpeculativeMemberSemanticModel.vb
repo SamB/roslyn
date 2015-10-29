@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' Allows asking semantic questions about a TypeSyntax or RangeArgumentSyntax node within a member, that did not appear in the original source code.
     ''' Typically, an instance is obtained by a call to SemanticModel.TryGetSpeculativeSemanticModel. 

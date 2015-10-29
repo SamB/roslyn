@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Represents a custom modifier (modopt/modreq).

@@ -3,12 +3,12 @@
 Imports System.Collections.Generic
 Imports System.Diagnostics
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' Tracks synthesized fields that are needed in a submission being compiled.

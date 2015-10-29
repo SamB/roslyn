@@ -2,7 +2,7 @@
 
 Imports System.Diagnostics
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Friend NotInheritable Class LookupSymbolsInfo
         Inherits AbstractLookupSymbolsInfo(Of Symbol)
 

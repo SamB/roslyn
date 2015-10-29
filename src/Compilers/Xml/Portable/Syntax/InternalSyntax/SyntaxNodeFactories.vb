@@ -6,11 +6,11 @@
 '-----------------------------------------------------------------------------------------------------------
 
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports InternalSyntax = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports InternalSyntax = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend Partial Class SyntaxFactory
         Friend Shared Function IntegerLiteralToken(text As String, base As LiteralBase, typeSuffix As TypeCharacter, value As ULong, leadingTrivia As VisualBasicSyntaxNode, trailingTrivia As VisualBasicSyntaxNode) As IntegerLiteralTokenSyntax

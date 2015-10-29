@@ -1,14 +1,14 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 '-----------------------------------------------------------------------------------------------------------
 ' Contains hand-written Partial class extensions to certain of the syntax nodes (other that the 
 ' base node SyntaxNode, which is in a different file.)
 '-----------------------------------------------------------------------------------------------------------
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
     Public Partial Class StructuredTriviaSyntax
         Inherits VisualBasicSyntaxNode
         Implements IStructuredTriviaSyntax

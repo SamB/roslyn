@@ -5,11 +5,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' Binding of method/property invocation is implemented in this part.
 
@@ -734,7 +734,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             If Not results.BestResult.HasValue Then
 
                 If results.ResolutionIsLateBound Then
-                    Debug.Assert(OptionStrict <> VisualBasic.OptionStrict.On)
+                    Debug.Assert(OptionStrict <> Xml.OptionStrict.On)
 
                     ' Did we have extension methods among candidates?
                     If group.Kind = BoundKind.MethodGroup Then
@@ -1039,10 +1039,10 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         ''' <summary>
         ''' Optimizes some runtime library calls through replacing them with a literal if possible.
         ''' VB Spec 11.2 defines the following runtime functions as being constant:
-        '''  - Microsoft.VisualBasic.Strings.ChrW
-        '''  - Microsoft.VisualBasic.Strings.Chr, if the constant value is between 0 and 128
-        '''  - Microsoft.VisualBasic.Strings.AscW, if the constant string is not empty
-        '''  - Microsoft.VisualBasic.Strings.Asc, if the constant string is not empty
+        '''  - Microsoft.Xml.Strings.ChrW
+        '''  - Microsoft.Xml.Strings.Chr, if the constant value is between 0 and 128
+        '''  - Microsoft.Xml.Strings.AscW, if the constant string is not empty
+        '''  - Microsoft.Xml.Strings.Asc, if the constant string is not empty
         ''' </summary>
         ''' <param name="method">The method.</param>
         ''' <param name="arguments">The arguments of the method call.</param>
@@ -1061,7 +1061,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             ' cheapest way to filter out methods that do not match
             If arguments.Length = 1 AndAlso arguments(0).IsConstant AndAlso Not arguments(0).ConstantValueOpt.IsBad Then
 
-                ' only continue checking if containing type is Microsoft.VisualBasic.Strings
+                ' only continue checking if containing type is Microsoft.Xml.Strings
                 If Compilation.GetWellKnownType(WellKnownType.Microsoft_VisualBasic_Strings) IsNot method.ContainingType Then
                     Return Nothing
                 End If
@@ -1383,7 +1383,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             ' Report diagnostic according to the state of candidates
             Select Case state
 
-                Case VisualBasic.OverloadResolution.CandidateAnalysisResultState.HasUseSiteError, OverloadResolution.CandidateAnalysisResultState.HasUnsupportedMetadata
+                Case Xml.OverloadResolution.CandidateAnalysisResultState.HasUseSiteError, OverloadResolution.CandidateAnalysisResultState.HasUnsupportedMetadata
 
                     If singleCandidate IsNot Nothing Then
                         ReportOverloadResolutionFailureForASingleCandidate(node, diagnosticLocationOpt, lookupResult, singleCandidateAnalysisResult,
@@ -1410,7 +1410,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                                         callerInfoOpt:=callerInfoOpt)
                     End If
 
-                Case VisualBasic.OverloadResolution.CandidateAnalysisResultState.Ambiguous
+                Case Xml.OverloadResolution.CandidateAnalysisResultState.Ambiguous
                     Dim candidate As Symbol = bestSymbols(0).OriginalDefinition
                     Dim container As Symbol = candidate.ContainingSymbol
                     ReportDiagnostic(diagnostics, diagnosticLocationOpt, ERRID.ERR_MetadataMembersAmbiguous3, candidate.Name, container.GetKindText(), container)
@@ -1976,8 +1976,8 @@ ProduceBoundNode:
             Debug.Assert(argumentNames.IsDefaultOrEmpty OrElse (argumentNames.Length > 0 AndAlso argumentNames.Length = arguments.Length))
             Debug.Assert(allowUnexpandedParamArrayForm OrElse allowExpandedParamArrayForm)
 
-            If candidateAnalysisResult.State = VisualBasic.OverloadResolution.CandidateAnalysisResultState.HasUseSiteError OrElse
-               candidateAnalysisResult.State = VisualBasic.OverloadResolution.CandidateAnalysisResultState.HasUnsupportedMetadata Then
+            If candidateAnalysisResult.State = Xml.OverloadResolution.CandidateAnalysisResultState.HasUseSiteError OrElse
+               candidateAnalysisResult.State = Xml.OverloadResolution.CandidateAnalysisResultState.HasUnsupportedMetadata Then
                 If lookupResult <> LookupResultKind.Inaccessible Then
                     Debug.Assert(lookupResult = LookupResultKind.Good)
                     ReportDiagnostic(diagnostics, diagnosticLocation, candidate.UnderlyingSymbol.GetUseSiteErrorInfo())
@@ -2466,7 +2466,7 @@ ProduceBoundNode:
 
                             Debug.Assert((conv.Key And ConversionKind.InvolvesNarrowingFromNumericConstant) = 0)
 
-                            If OptionStrict = VisualBasic.OptionStrict.On Then
+                            If OptionStrict = Xml.OptionStrict.On Then
                                 CreateConversionAndReportDiagnostic(argument.Syntax, boundTemp, conv, False, copyBackType, diagnostics, copybackConversionParamName:=param.Name)
                             ElseIf reportNarrowingConversions Then
                                 ReportDiagnostic(diagnostics, argument.Syntax, ERRID.ERR_ArgumentCopyBackNarrowing3,
@@ -2535,7 +2535,7 @@ ProduceBoundNode:
 
                 If (conv.Key And ConversionKind.InvolvesNarrowingFromNumericConstant) = 0 Then
 
-                    If OptionStrict = VisualBasic.OptionStrict.On Then
+                    If OptionStrict = Xml.OptionStrict.On Then
                         If delegateSymbol Is Nothing Then
                             CreateConversionAndReportDiagnostic(argument.Syntax, argument, conv, False, targetType, diagnostics)
                         Else

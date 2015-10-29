@@ -2,9 +2,9 @@
 
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' this is a SyntaxReference implementation that lazily translates the result (SyntaxNode) of the original syntax reference
     ''' to other one.

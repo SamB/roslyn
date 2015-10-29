@@ -7,14 +7,14 @@ Imports System.Collections.ObjectModel
 Imports System.Runtime.InteropServices
 Imports Microsoft.Cci
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 Imports System.Globalization
 Imports System.Threading
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
 
     ''' <summary>
     ''' Represents a primary module of a <see cref="RetargetingAssemblySymbol"/>. Essentially this is a wrapper around 

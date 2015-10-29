@@ -5,14 +5,14 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports Microsoft.Cci
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports System.Reflection.Metadata
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Class SourceAttributeData
         Inherits VisualBasicAttributeData

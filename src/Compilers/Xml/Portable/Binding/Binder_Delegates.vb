@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend Class Binder
 
@@ -484,13 +484,13 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             ' Let's go through overload resolution, pretending that Option Strict is Off and see if it succeeds.
             Dim resolutionBinder As Binder
 
-            If addressOfExpression.Binder.OptionStrict <> VisualBasic.OptionStrict.Off Then
+            If addressOfExpression.Binder.OptionStrict <> Xml.OptionStrict.Off Then
                 resolutionBinder = New OptionStrictOffBinder(addressOfExpression.Binder)
             Else
                 resolutionBinder = addressOfExpression.Binder
             End If
 
-            Debug.Assert(resolutionBinder.OptionStrict = VisualBasic.OptionStrict.Off)
+            Debug.Assert(resolutionBinder.OptionStrict = Xml.OptionStrict.Off)
 
             Dim useSiteDiagnostics As HashSet(Of DiagnosticInfo) = Nothing
             Dim resolutionResult = OverloadResolution.MethodInvocationOverloadResolution(
@@ -549,7 +549,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
             Dim bestCandidatesState As OverloadResolution.CandidateAnalysisResultState = bestCandidates(0).State
 
-            If bestCandidatesState = VisualBasic.OverloadResolution.CandidateAnalysisResultState.Applicable Then
+            If bestCandidatesState = Xml.OverloadResolution.CandidateAnalysisResultState.Applicable Then
                 ' if there is an applicable candidate in the list, we know it must be an ambiguous match 
                 ' (or there are more applicable candidates in this list), otherwise this would have been
                 ' the best match.

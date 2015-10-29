@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Class SubstitutedErrorType
         Inherits ErrorTypeSymbol
 
@@ -74,7 +74,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
                 ' We don't alpha-rename type parameters of error type symbols because they don't have constraints
                 ' and, therefore, have nothing to substitute. Just use identity substitution.
-                substitution = VisualBasic.Symbols.TypeSubstitution.Concat(_fullInstanceType, substitution, Nothing)
+                substitution = Xml.Symbols.TypeSubstitution.Concat(_fullInstanceType, substitution, Nothing)
 
                 Return New SubstitutedErrorType(Me.ContainingSymbol, _fullInstanceType, substitution)
             End Get
@@ -157,7 +157,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
             If containingType Is Nothing Then
                 Debug.Assert(_substitution.Parent Is Nothing)
-                Dim substitution As TypeSubstitution = VisualBasic.Symbols.TypeSubstitution.AdjustForConstruct(Nothing, _substitution, additionalSubstitution)
+                Dim substitution As TypeSubstitution = Xml.Symbols.TypeSubstitution.AdjustForConstruct(Nothing, _substitution, additionalSubstitution)
 
                 If substitution Is Nothing Then
                     Return _fullInstanceType
@@ -171,7 +171,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
             Else
                 Dim newContainer = DirectCast(containingType.InternalSubstituteTypeParameters(additionalSubstitution).AsTypeSymbolOnly(), NamedTypeSymbol)
 
-                Dim newSubstitution = VisualBasic.Symbols.TypeSubstitution.AdjustForConstruct(newContainer.TypeSubstitution, _substitution, additionalSubstitution)
+                Dim newSubstitution = Xml.Symbols.TypeSubstitution.AdjustForConstruct(newContainer.TypeSubstitution, _substitution, additionalSubstitution)
 
                 If newSubstitution Is Nothing Then
                     Debug.Assert(newContainer.TypeSubstitution Is Nothing AndAlso newContainer.IsDefinition)

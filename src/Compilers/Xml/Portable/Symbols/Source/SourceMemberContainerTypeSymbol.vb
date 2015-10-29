@@ -4,10 +4,10 @@ Imports System.Collections.Immutable
 Imports System.Linq
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Represents a named type symbol whose members are declared in source.
@@ -233,7 +233,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                     Dim type = New SourceNamedTypeSymbol(declaration, containingSymbol, containingModule)
 
                     ' In case Vb Core Runtime is being embedded, we should mark attribute 
-                    ' 'Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute'
+                    ' 'Microsoft.Xml.CompilerServices.StandardModuleAttribute'
                     ' as being referenced if the named type just created is a module
                     If type.TypeKind = TypeKind.Module Then
                         type.DeclaringCompilation.EmbeddedSymbolManager.RegisterModuleDeclaration()
@@ -1463,7 +1463,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                                                     sourceModule As ModuleSymbol) As SourceNamedTypeSymbol
             Dim childName As String = declarationSyntax.Identifier.ValueText
             Dim childArity As Integer = DeclarationTreeBuilder.GetArity(declarationSyntax.TypeParameterList)
-            Dim childDeclKind As DeclarationKind = VisualBasic.Symbols.DeclarationKind.Delegate
+            Dim childDeclKind As DeclarationKind = Xml.Symbols.DeclarationKind.Delegate
 
             Return FindSymbolInContainer(childName, childArity, childDeclKind, container, sourceModule)
         End Function

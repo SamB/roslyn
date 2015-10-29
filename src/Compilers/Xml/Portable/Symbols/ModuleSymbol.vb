@@ -4,7 +4,7 @@ Imports System.Collections.Immutable
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' Represents a module within an assembly. Every assembly contains one or more modules.
     ''' </summary>

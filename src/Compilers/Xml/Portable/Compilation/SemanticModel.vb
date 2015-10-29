@@ -5,10 +5,10 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Semantics
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' Allows asking semantic questions about a tree of syntax nodes in a Compilation. Typically,
@@ -2956,7 +2956,7 @@ _Default:
         ''' This takes into effect both file-level "Option Strict" statements and the project-level
         ''' defaults.
         ''' </summary>
-        Public ReadOnly Property OptionStrict As VisualBasic.OptionStrict
+        Public ReadOnly Property OptionStrict As Xml.OptionStrict
             Get
                 ' Since options never change within a file, we can just use the start location.
                 Dim binder = Me.GetEnclosingBinder(Root.SpanStart) ' should never return null.

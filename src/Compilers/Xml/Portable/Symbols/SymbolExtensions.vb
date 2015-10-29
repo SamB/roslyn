@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports System.Runtime.CompilerServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Module SymbolExtensions
 
         Friend Const NamespaceKindNamespaceGroup As NamespaceKind = Nothing
@@ -373,7 +373,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
         End Function
 
         ''' <summary>
-        ''' Does symbol or its containing type have Microsoft.VisualBasic.Embedded() attribute
+        ''' Does symbol or its containing type have Microsoft.Xml.Embedded() attribute
         ''' </summary>
         <Extension()>
         Friend Function IsHiddenByEmbeddedAttribute(symbol As Symbol) As Boolean

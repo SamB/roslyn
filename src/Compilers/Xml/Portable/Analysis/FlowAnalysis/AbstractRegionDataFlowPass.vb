@@ -6,10 +6,10 @@ Imports System.Collections.Immutable
 Imports System.Linq
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' Note: this code has a copy-and-paste sibling in AbstractRegionControlFlowPass.
     ' Any fix to one should be applied to the other.

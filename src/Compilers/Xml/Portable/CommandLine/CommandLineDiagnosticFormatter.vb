@@ -5,7 +5,7 @@ Imports System.Runtime.InteropServices
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Friend NotInheritable Class CommandLineDiagnosticFormatter
         Inherits VisualBasicDiagnosticFormatter
 

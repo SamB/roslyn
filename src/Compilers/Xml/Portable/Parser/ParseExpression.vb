@@ -4,9 +4,9 @@
 '============ Methods for parsing portions of executable statements ==
 '
 Imports System.Runtime.InteropServices
-Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxFactory
+Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxFactory
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend Partial Class Parser
 

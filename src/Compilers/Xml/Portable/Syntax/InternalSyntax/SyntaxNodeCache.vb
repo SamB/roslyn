@@ -11,7 +11,7 @@ Imports System.Text
 Imports System.Threading
 Imports System.Threading.Tasks
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     ''' <summary>
     ''' Provides caching functionality for green nonterminals with up to 3 children.
     ''' Example:

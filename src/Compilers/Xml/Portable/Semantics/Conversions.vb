@@ -6,12 +6,12 @@ Imports System.Linq
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.TypeSymbolExtensions
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols.TypeSymbolExtensions
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' Summarizes whether a conversion is allowed, and if so, which kind of conversion (and in some cases, the

@@ -8,11 +8,11 @@
 Imports System.Threading
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
-Imports InternalSyntax = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
+Imports InternalSyntax = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Public Class SyntaxFactory
 

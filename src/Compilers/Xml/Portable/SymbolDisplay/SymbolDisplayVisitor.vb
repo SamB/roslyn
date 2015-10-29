@@ -1,11 +1,11 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports Microsoft.CodeAnalysis.SymbolDisplay
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-'Imports SemanticModel = Microsoft.CodeAnalysis.VisualBasic.Semantics.SemanticModel
+'Imports SemanticModel = Microsoft.CodeAnalysis.Xml.Semantics.SemanticModel
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend Class SymbolDisplayVisitor
         Inherits AbstractSymbolDisplayVisitor(Of SemanticModel)
 

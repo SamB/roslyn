@@ -1,10 +1,10 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxFactory
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxFactory
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend Partial Class Parser
 

@@ -2,10 +2,10 @@
 
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Partial Friend NotInheritable Class AnonymousTypeManager
 
@@ -13,7 +13,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
             Inherits SynthesizedRegularMethodBase
 
             Public Sub New(container As AnonymousTypeTemplateSymbol)
-                MyBase.New(VisualBasic.VisualBasicSyntaxTree.Dummy.GetRoot(), container, WellKnownMemberNames.ObjectToString)
+                MyBase.New(Xml.VisualBasicSyntaxTree.Dummy.GetRoot(), container, WellKnownMemberNames.ObjectToString)
             End Sub
 
             Private ReadOnly Property AnonymousType As AnonymousTypeTemplateSymbol

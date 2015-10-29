@@ -4,11 +4,11 @@
 ' Contains the definition of the DeclarationContext
 '-----------------------------------------------------------------------------
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxFactory
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxFactory
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Friend Class TypeBlockContext
         Inherits DeclarationContext
 

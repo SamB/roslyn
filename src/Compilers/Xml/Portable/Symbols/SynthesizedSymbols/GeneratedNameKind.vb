@@ -3,7 +3,7 @@
 Imports System.Globalization
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Enum GeneratedNameKind
         None = 0

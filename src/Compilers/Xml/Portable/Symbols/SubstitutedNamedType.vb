@@ -6,11 +6,11 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' A SubstitutedNamedType represents a named type that has had some sort
     ''' of substitution applied to it. I.e., its not a pure instance type, but at least
@@ -627,7 +627,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                 ' alpha-renamed type parameters.
                 Debug.Assert(container.TypeSubstitution IsNot Nothing AndAlso
                              container.TypeSubstitution.TargetGenericDefinition Is fullInstanceType.ContainingSymbol)
-                Dim substitution = VisualBasic.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
+                Dim substitution = Xml.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
                                                                          StaticCast(Of TypeParameterSymbol).From(newTypeParameters))
                 Debug.Assert(substitution.TargetGenericDefinition Is fullInstanceType)
 
@@ -808,13 +808,13 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
                 If substitution.TargetGenericDefinition IsNot fullInstanceType Then
                     ' We can ignore passed in substitution completely.
-                    substitution = VisualBasic.Symbols.TypeSubstitution.Concat(fullInstanceType, parentsTypeSubstitution, Nothing)
+                    substitution = Xml.Symbols.TypeSubstitution.Concat(fullInstanceType, parentsTypeSubstitution, Nothing)
                     Debug.Assert(substitution.TargetGenericDefinition Is fullInstanceType)
                 Else
                     Debug.Assert(substitution.Pairs.Length = 0)
 
                     If substitution.Parent IsNot parentsTypeSubstitution Then
-                        substitution = VisualBasic.Symbols.TypeSubstitution.Concat(fullInstanceType, parentsTypeSubstitution, Nothing)
+                        substitution = Xml.Symbols.TypeSubstitution.Concat(fullInstanceType, parentsTypeSubstitution, Nothing)
                     End If
                 End If
 
@@ -1089,14 +1089,14 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                     Dim constructFrom As SpecializedGenericType = SpecializedGenericType.Create(newContainedType, definition)
 
                     Debug.Assert(newContainedType.TypeSubstitution IsNot Nothing)
-                    substitution = VisualBasic.Symbols.TypeSubstitution.AdjustForConstruct(newContainedType.TypeSubstitution, _substitution, additionalSubstitution)
+                    substitution = Xml.Symbols.TypeSubstitution.AdjustForConstruct(newContainedType.TypeSubstitution, _substitution, additionalSubstitution)
 
                     Debug.Assert(substitution IsNot Nothing)
                     Return New ConstructedSpecializedGenericType(constructFrom, substitution)
                 End If
 
                 Debug.Assert(newContainedType Is Nothing OrElse newContainedType.TypeSubstitution Is Nothing)
-                substitution = VisualBasic.Symbols.TypeSubstitution.AdjustForConstruct(Nothing, _substitution, additionalSubstitution)
+                substitution = Xml.Symbols.TypeSubstitution.AdjustForConstruct(Nothing, _substitution, additionalSubstitution)
 
                 If substitution Is Nothing Then
                     ' Old substitution is cancelled out.
@@ -1167,7 +1167,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                 Debug.Assert(Not container.IsDefinition)
 
                 Dim newContainer = DirectCast(container.InternalSubstituteTypeParameters(additionalSubstitution).AsTypeSymbolOnly, NamedTypeSymbol)
-                Dim newSubstitution As TypeSubstitution = VisualBasic.Symbols.TypeSubstitution.AdjustForConstruct(newContainer.TypeSubstitution, _substitution, additionalSubstitution)
+                Dim newSubstitution As TypeSubstitution = Xml.Symbols.TypeSubstitution.AdjustForConstruct(newContainer.TypeSubstitution, _substitution, additionalSubstitution)
 
                 If newSubstitution Is Nothing Then
                     ' Substitutions cancelled each other out.

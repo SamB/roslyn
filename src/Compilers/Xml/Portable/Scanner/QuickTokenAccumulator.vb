@@ -9,11 +9,11 @@ Option Strict On
 
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     '' The QuickTokenAccumulator is a small mini-tokenizer that may fail. It consumes characters and
     '' eventually either decides that either it found a complete token (including the trivia on either
     '' side), or it gives up and says that the full scanner should take an attempt. It also accumulates the 

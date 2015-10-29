@@ -66,7 +66,7 @@ Unify Enum declarations with other block type declarations.
 
 <!-- TODO: Add in "BadExpression",  etc. -->
 
-<define-parse-tree namespace="Microsoft.CodeAnalysis.VisualBasic" visitor="VisualBasicSyntaxVisitor" rewrite-visitor="VisualBasicSyntaxRewriter" factory-class="SyntaxFactory" contextual-factory-class="ContextAwareSyntaxFactory" xmlns="http://schemas.microsoft.com/VisualStudio/Roslyn/Compiler" >
+<define-parse-tree namespace="Microsoft.CodeAnalysis.Xml" visitor="VisualBasicSyntaxVisitor" rewrite-visitor="VisualBasicSyntaxRewriter" factory-class="SyntaxFactory" contextual-factory-class="ContextAwareSyntaxFactory" xmlns="http://schemas.microsoft.com/VisualStudio/Roslyn/Compiler" >
   <definitions>
 
     <!--

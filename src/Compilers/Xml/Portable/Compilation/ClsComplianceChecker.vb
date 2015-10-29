@@ -5,10 +5,10 @@ Imports System.Collections.Immutable
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 Imports Out = System.Runtime.InteropServices.OutAttribute
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' Traverses the symbol table checking for CLS compliance.

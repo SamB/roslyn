@@ -6,9 +6,9 @@
 Option Compare Binary
 
 Imports System.Runtime.CompilerServices
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Partial Friend Class Scanner
 
 #Region "Caches"

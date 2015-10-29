@@ -4,11 +4,11 @@ Imports System.Globalization
 Imports System.Reflection
 Imports Microsoft.CodeAnalysis.Collections
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.ObjectDisplay
+Namespace Microsoft.CodeAnalysis.Xml.ObjectDisplay
 
 #Disable Warning RS0010
     ''' <summary>
-    ''' Displays a value in the VisualBasic style.
+    ''' Displays a value in the Xml style.
     ''' </summary>
     ''' <seealso cref="T:Microsoft.CodeAnalysis.CSharp.Symbols.ObjectDisplay"/>
 #Enable Warning RS0010

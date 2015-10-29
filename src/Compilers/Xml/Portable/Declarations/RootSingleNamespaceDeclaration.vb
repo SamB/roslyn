@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Class RootSingleNamespaceDeclaration
         Inherits GlobalNamespaceDeclaration
 

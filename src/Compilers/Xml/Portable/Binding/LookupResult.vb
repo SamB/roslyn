@@ -3,9 +3,9 @@
 Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Runtime.CompilerServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' The kinds of results. Higher results take precedence over lower results (except that Good and Ambiguous have
     ' equal priority, generally).
@@ -953,9 +953,9 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 ' being unreachable because of an ambiguity error (Return 0 below). 
                 '
                 ' Conditions 'first.IsEmbedded = second.IsEmbedded' below make sure that if an embedded 
-                ' namespace like Microsoft.VisualBasic conflicts with user defined type Microsoft.VisualBasic, 
+                ' namespace like Microsoft.Xml conflicts with user defined type Microsoft.Xml, 
                 ' namespace will win making possible to access embedded types via direct reference, 
-                ' such as Microsoft.VisualBasic.Embedded
+                ' such as Microsoft.Xml.Embedded
 
                 If first.Kind = SymbolKind.Namespace Then
                     If second.ContainingModule Is sourceModule AndAlso first.IsEmbedded = second.IsEmbedded Then

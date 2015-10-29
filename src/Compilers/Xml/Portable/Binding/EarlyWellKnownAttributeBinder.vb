@@ -6,11 +6,11 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.RuntimeMembers
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' This is a binder for use when early decoding of well known attributes. The binder will only bind expressions that can appear in an attribute.
@@ -68,10 +68,10 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             '         The +, –, *, ^, Mod, /, \, <<, >>, &, And, Or, Xor, AndAlso, OrElse, =, <, >, <>, <=, and => binary operators, provided each operand and result is of a type listed above.
             '         The conditional operator If, provided each operand and result is of a type listed above.
             '         The following run-time functions:
-            '            Microsoft.VisualBasic.Strings.ChrW
-            '            Microsoft.VisualBasic.Strings.Chr, if the constant value is between 0 and 128
-            '            Microsoft.VisualBasic.Strings.AscW, if the constant string is not empty
-            '            Microsoft.VisualBasic.Strings.Asc, if the constant string is not empty
+            '            Microsoft.Xml.Strings.ChrW
+            '            Microsoft.Xml.Strings.Chr, if the constant value is between 0 and 128
+            '            Microsoft.Xml.Strings.AscW, if the constant string is not empty
+            '            Microsoft.Xml.Strings.Asc, if the constant string is not empty
             '
             ' In addition, attributes allow array expressions including both array literal and array creation expressions as well as GetType expressions.
 
@@ -152,10 +152,10 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                 Case SyntaxKind.InvocationExpression
                     ' The following run-time functions may appear in constant expressions:
-                    '     Microsoft.VisualBasic.Strings.ChrW
-                    '     Microsoft.VisualBasic.Strings.Chr, if the constant value is between 0 and 128
-                    '     Microsoft.VisualBasic.Strings.AscW, if the constant string is not empty
-                    '     Microsoft.VisualBasic.Strings.Asc, if the constant string is not empty
+                    '     Microsoft.Xml.Strings.ChrW
+                    '     Microsoft.Xml.Strings.Chr, if the constant value is between 0 and 128
+                    '     Microsoft.Xml.Strings.AscW, if the constant string is not empty
+                    '     Microsoft.Xml.Strings.Asc, if the constant string is not empty
 
                     Dim memberAccess = TryCast(DirectCast(node, InvocationExpressionSyntax).Expression, MemberAccessExpressionSyntax)
                     If memberAccess IsNot Nothing Then

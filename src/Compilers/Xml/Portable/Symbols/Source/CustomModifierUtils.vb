@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Class CustomModifierUtils
         Public Shared Function CopyParameterCustomModifiers(
             overriddenMemberParameters As ImmutableArray(Of ParameterSymbol),

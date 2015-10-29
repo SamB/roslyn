@@ -2,7 +2,7 @@
 
 Imports System.Reflection
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend Class SymbolDisplayVisitor
 
         Protected Overrides Sub AddBitwiseOr()

@@ -2,7 +2,7 @@
 
 Imports System.Runtime.CompilerServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend Module BlockContextExtensions
 

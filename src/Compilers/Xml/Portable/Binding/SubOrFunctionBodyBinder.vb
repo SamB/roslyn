@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' A SubOrFunctionBodyBinder provides context for looking up parameters/labels in a body of an executable entity (a method, lambda, or top-level script code), 

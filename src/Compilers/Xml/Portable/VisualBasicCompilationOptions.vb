@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' A class representing Visual Basic compilation Options.
     ''' </summary>

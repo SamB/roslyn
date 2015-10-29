@@ -8,10 +8,10 @@ Option Strict On
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Partial Friend Class Scanner
 

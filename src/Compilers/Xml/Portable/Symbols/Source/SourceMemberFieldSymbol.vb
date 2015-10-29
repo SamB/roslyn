@@ -5,11 +5,11 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Class SourceMemberFieldSymbol
         Inherits SourceFieldSymbol
 
@@ -189,7 +189,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                 varType = binder.DecodeModifiedIdentifierType(modifiedIdentifierSyntax, asClauseType, asClauseOpt, initializerSyntax,
                                                                   getErrorInfo,
                                                                   diagnostics,
-                                                                  VisualBasic.Binder.ModifiedIdentifierTypeDecoderContext.FieldType)
+                                                                  Xml.Binder.ModifiedIdentifierTypeDecoderContext.FieldType)
             End If
 
             Debug.Assert(varType IsNot Nothing)

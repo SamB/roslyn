@@ -2,10 +2,10 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' Represents Visual Basic parse options.
     ''' </summary>

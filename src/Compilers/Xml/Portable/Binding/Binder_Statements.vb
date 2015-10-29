@@ -2,10 +2,10 @@
 
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     'This portion of the binder converts StatementSyntax nodes into BoundStatements
 
@@ -317,7 +317,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                     End If
 
                     ' The implicit exitLabelStatement should be the last statement inside BoundUnstructuredExceptionHandlingStatement
-                    ' in order to make sure that explicit returns do not bypass a call to Microsoft.VisualBasic.CompilerServices.ProjectData.ClearProjectError.
+                    ' in order to make sure that explicit returns do not bypass a call to Microsoft.Xml.CompilerServices.ProjectData.ClearProjectError.
                     body = body.Update(body.StatementListSyntax, body.Locals, body.Statements.Add(exitLabelStatement))
 
                     statements.Add(New BoundUnstructuredExceptionHandlingStatement(methodBlock,

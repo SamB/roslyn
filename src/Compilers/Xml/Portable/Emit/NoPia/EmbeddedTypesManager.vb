@@ -2,11 +2,11 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 Imports System.Collections.Concurrent
 Imports System.Threading
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit.NoPia
+Namespace Microsoft.CodeAnalysis.Xml.Emit.NoPia
 
     Friend NotInheritable Class EmbeddedTypesManager
         Inherits Microsoft.CodeAnalysis.Emit.NoPia.EmbeddedTypesManager(Of PEModuleBuilder, ModuleCompilationState, EmbeddedTypesManager, VisualBasicSyntaxNode, VisualBasicAttributeData, Symbol, AssemblySymbol, NamedTypeSymbol, FieldSymbol, MethodSymbol, EventSymbol, PropertySymbol, ParameterSymbol, TypeParameterSymbol, EmbeddedType, EmbeddedField, EmbeddedMethod, EmbeddedEvent, EmbeddedProperty, EmbeddedParameter, EmbeddedTypeParameter)

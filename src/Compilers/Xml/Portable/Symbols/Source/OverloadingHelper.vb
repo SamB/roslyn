@@ -3,11 +3,11 @@
 Imports System.Diagnostics
 Imports System.Runtime.CompilerServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' Function that help implement the overloading rules for VB, in particular the rules
     ''' for recasing method and property names.

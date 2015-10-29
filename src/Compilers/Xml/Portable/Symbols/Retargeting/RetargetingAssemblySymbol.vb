@@ -5,13 +5,13 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Collections.ObjectModel
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports System.Globalization
 Imports System.Threading
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
 
     ''' <summary>
     ''' Essentially this is a wrapper around another AssemblySymbol that is responsible for retargeting

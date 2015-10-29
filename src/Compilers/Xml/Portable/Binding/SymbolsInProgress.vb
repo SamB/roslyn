@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' This is used while computing the values of constant symbols.  Since they can depend on each other,

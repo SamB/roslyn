@@ -1,13 +1,13 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 '-----------------------------------------------------------------------------
 ' Contains the definition of the ExecutableStatementContext. The base class
 ' for all blocks that contain statements.
 '-----------------------------------------------------------------------------
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend MustInherit Class ExecutableStatementContext
         Inherits DeclarationContext

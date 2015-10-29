@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend Class SymbolDisplayVisitor
         Public Overrides Sub VisitField(symbol As IFieldSymbol)
             ' field symbol must have a containing type
@@ -589,7 +589,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                         AddSpace()
                     End If
 
-                    ' Overloads is only available for VisualBasic symbols.
+                    ' Overloads is only available for Xml symbols.
                     If IsOverloads(symbol) AndAlso Not symbol.IsOverride Then
                         AddKeyword(SyntaxKind.OverloadsKeyword)
                         AddSpace()

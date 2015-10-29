@@ -2,7 +2,7 @@
 
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary> 
     ''' Module implements Dev11 class CRC32 used in anonymous type GetHashCode implementation

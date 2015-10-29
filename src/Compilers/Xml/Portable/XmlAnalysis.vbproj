@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (c)  Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information. -->
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="Settings">
@@ -9,7 +9,7 @@
     <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
     <ProjectGuid>{2AEFF554-D31E-496D-BC20-1D1F15B63005}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Microsoft.CodeAnalysis.VisualBasic</AssemblyName>
+    <AssemblyName>Microsoft.CodeAnalysis.Xml</AssemblyName>
     <VBSyntaxGeneratorToolPath>$(OutDir)\VBSyntaxGenerator.exe</VBSyntaxGeneratorToolPath>
     <BoundTreeGeneratorToolPath>$(OutDir)\BoundTreeGenerator.exe</BoundTreeGeneratorToolPath>
     <VBErrorFactsGeneratorToolPath>$(OutDir)\VBErrorFactsGenerator.exe</VBErrorFactsGeneratorToolPath>
@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>false</Optimize>
     <DebugType>full</DebugType>
-    <DocumentationFile>Microsoft.CodeAnalysis.VisualBasic.xml</DocumentationFile>
+    <DocumentationFile>Microsoft.CodeAnalysis.Xml.xml</DocumentationFile>
     <NoWarn>42014</NoWarn>
     <CodeAnalysisRuleSet>..\..\VisualBasic\BasicCodeAnalysisRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -55,12 +55,36 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <DocumentationFile>Microsoft.CodeAnalysis.VisualBasic.xml</DocumentationFile>
+    <DocumentationFile>Microsoft.CodeAnalysis.Xml.xml</DocumentationFile>
     <NoWarn>42014</NoWarn>
     <CodeAnalysisRuleSet>..\BasicCodeAnalysisRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace />
+    <RootNamespace>
+    </RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutDir>..\..\..\..\Binaries\Debug\amd64</OutDir>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <DocumentationFile>Microsoft.CodeAnalysis.Xml.xml</DocumentationFile>
+    <NoWarn>42014</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>..\BasicCodeAnalysisRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutDir>..\..\..\..\Binaries\Release\amd64</OutDir>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <DocumentationFile>Microsoft.CodeAnalysis.Xml.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42014</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>..\BasicCodeAnalysisRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(IntermediateOutputPath)BoundNodes.xml.Generated.vb" />
@@ -937,7 +961,7 @@
     <EmbeddedResource Include="Symbols\EmbeddedSymbols\VbCoreSourceText.vb" />
     <EmbeddedResource Include="Symbols\EmbeddedSymbols\VbMyTemplateText.vb" />
     <EmbeddedResource Include="VBResources.resx">
-      <CustomToolNamespace>Microsoft.CodeAnalysis.VisualBasic</CustomToolNamespace>
+      <CustomToolNamespace>Microsoft.CodeAnalysis.Xml</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>VBResources.Designer.vb</LastGenOutput>
@@ -967,32 +991,32 @@
     <Import Include="Roslyn.Utilities" />
   </ItemGroup>
   <ItemGroup>
-    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic.ExpressionEvaluator.ExpressionCompiler" />
-    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic.Scripting" />
-    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic.InteractiveEditorFeatures" />
+    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.Xml.ExpressionEvaluator.ExpressionCompiler" />
+    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.Xml.Scripting" />
+    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.Xml.InteractiveEditorFeatures" />
     <InternalsVisibleTo Include="vbc" />
     <InternalsVisibleTo Include="vbi" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.CompilerServer" />
     <InternalsVisibleTo Include="VBCSCompiler" />
     <InternalsVisibleTo Include="VBCSCompilerPortable" />
     <InternalsVisibleToTest Include="Roslyn.Compilers.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.CommandLine.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.Emit.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.Semantic.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.Symbol.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.Syntax.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Compilers.VisualBasic.Test.Utilities" />
-    <InternalsVisibleToTest Include="Roslyn.ExpressionEvaluator.VisualBasic.ExpressionCompiler.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.CommandLine.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.Emit.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.Semantic.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.Symbol.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.Syntax.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Compilers.Xml.Test.Utilities" />
+    <InternalsVisibleToTest Include="Roslyn.ExpressionEvaluator.Xml.ExpressionCompiler.UnitTests" />
     <InternalsVisibleToTest Include="Roslyn.ExpressionEvaluator.ExpressionCompiler.Test.Utilities" />
     <InternalsVisibleToTest Include="Roslyn.Test.Utilities.Desktop" />
     <InternalsVisibleToTest Include="Roslyn.Test.Utilities.FX45" />
     <InternalsVisibleToTest Include="Roslyn.Test.Utilities" />
     <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.Scripting.UnitTests" />
     <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.Scripting.Desktop.UnitTests" />
-    <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.VisualBasic.Scripting.UnitTests" />
-    <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.VisualBasic.Scripting.Desktop.UnitTests" />
+    <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.Scripting.Xml.UnitTests" />
+    <InternalsVisibleToTest Include="Microsoft.CodeAnalysis.Scripting.Xml.Desktop.UnitTests" />
     <InternalsVisibleToTest Include="Roslyn.VisualStudio.Services.UnitTests" />
-    <InternalsVisibleToTest Include="Roslyn.Services.Editor.VisualBasic.UnitTests" />
+    <InternalsVisibleToTest Include="Roslyn.Services.Editor.Xml.UnitTests" />
     <InternalsVisibleToTest Include="Roslyn.Services.Editor.UnitTests2" />
   </ItemGroup>
   <ItemGroup>

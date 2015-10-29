@@ -2,10 +2,10 @@
 
 Imports System.Collections.Generic
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Partial Friend Class SyntaxFactory
         Friend Shared ReadOnly CarriageReturnLineFeed As SyntaxTrivia = EndOfLine(vbCrLf)
         Friend Shared ReadOnly LineFeed As SyntaxTrivia = EndOfLine(vbLf)

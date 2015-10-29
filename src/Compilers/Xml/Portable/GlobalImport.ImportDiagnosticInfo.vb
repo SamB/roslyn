@@ -2,7 +2,7 @@
 
 Imports System.Globalization
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Public Partial Class GlobalImport
 
@@ -46,7 +46,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                            importText As String,
                            startIndex As Integer,
                            length As Integer)
-                MyBase.New(VisualBasic.MessageProvider.Instance, wrappedDiagnostic.Code)
+                MyBase.New(Xml.MessageProvider.Instance, wrappedDiagnostic.Code)
                 _wrappedDiagnostic = wrappedDiagnostic
                 _importText = importText
                 _startIndex = startIndex

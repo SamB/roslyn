@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Collections
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Public Class VisualBasicCompilation
         Partial Friend Class DocumentationCommentCompiler
             Inherits VisualBasicSymbolVisitor

@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend NotInheritable Class LocalRewriter
         Public Overrides Function VisitCall(node As BoundCall) As BoundNode
             Debug.Assert(Not node.IsConstant, "Constant calls should become literals by now")

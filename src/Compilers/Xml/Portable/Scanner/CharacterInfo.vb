@@ -9,7 +9,7 @@ Option Infer On
 
 Imports System.Globalization
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' Provides members for determining Syntax facts about characters and Unicode conversions.

@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' When signature of an implementing method differs (due to presence of custom modifiers)

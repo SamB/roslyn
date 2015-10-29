@@ -7,11 +7,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Emit
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' The VisualBasicCommandLineParser class contains members used to perform various Visual Basic command line parsing operations.
     ''' </summary>
@@ -32,7 +32,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         ''' </summary>
         ''' <param name="isScriptRunner">An optional parameter indicating whether to create a interactive command line parser.</param>
         Friend Sub New(Optional isScriptRunner As Boolean = False)
-            MyBase.New(VisualBasic.MessageProvider.Instance, isScriptRunner)
+            MyBase.New(Xml.MessageProvider.Instance, isScriptRunner)
         End Sub
 
         Private Const s_win32Manifest As String = "win32manifest"
@@ -222,9 +222,9 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                     Case "optionstrict"
                         value = RemoveQuotesAndSlashes(value)
                         If value Is Nothing Then
-                            optionStrict = VisualBasic.OptionStrict.On
+                            optionStrict = Xml.OptionStrict.On
                         ElseIf String.Equals(value, "custom", StringComparison.OrdinalIgnoreCase) Then
-                            optionStrict = VisualBasic.OptionStrict.Custom
+                            optionStrict = Xml.OptionStrict.Custom
                         Else
                             AddDiagnostic(diagnostics, ERRID.ERR_ArgumentRequired, "optionstrict", ":custom")
                         End If
@@ -237,7 +237,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                             Continue For
                         End If
 
-                        optionStrict = VisualBasic.OptionStrict.On
+                        optionStrict = Xml.OptionStrict.On
                         Continue For
 
                     Case "optionstrict-"
@@ -246,7 +246,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                             Continue For
                         End If
 
-                        optionStrict = VisualBasic.OptionStrict.Off
+                        optionStrict = Xml.OptionStrict.Off
                         Continue For
 
                     Case "optioncompare"
@@ -899,7 +899,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                 Continue For
                             End If
 
-                            outputLevel = VisualBasic.OutputLevel.Quiet
+                            outputLevel = Xml.OutputLevel.Quiet
                             Continue For
 
                         Case "quiet"
@@ -907,7 +907,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                 Exit Select
                             End If
 
-                            outputLevel = VisualBasic.OutputLevel.Quiet
+                            outputLevel = Xml.OutputLevel.Quiet
                             Continue For
 
                         Case "verbose"
@@ -915,7 +915,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                 Exit Select
                             End If
 
-                            outputLevel = VisualBasic.OutputLevel.Verbose
+                            outputLevel = Xml.OutputLevel.Verbose
                             Continue For
 
                         Case "verbose+"
@@ -924,7 +924,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                 Continue For
                             End If
 
-                            outputLevel = VisualBasic.OutputLevel.Verbose
+                            outputLevel = Xml.OutputLevel.Verbose
                             Continue For
 
                         Case "quiet-", "verbose-"
@@ -933,7 +933,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                 Continue For
                             End If
 
-                            outputLevel = VisualBasic.OutputLevel.Normal
+                            outputLevel = Xml.OutputLevel.Normal
                             Continue For
 
                         Case "utf8output", "utf8output+"
@@ -1168,12 +1168,12 @@ lVbRuntimePlus:
                 ' Dev11 also adds System.Core.dll in VbHostedCompiler::CreateCompilerProject()
             End If
 
-            ' Add reference to 'Microsoft.VisualBasic.dll' if needed
+            ' Add reference to 'Microsoft.Xml.dll' if needed
             If includeVbRuntimeReference Then
                 If vbRuntimePath Is Nothing Then
-                    Dim msVbDllPath As String = FindFileInSdkPath(sdkPaths, "Microsoft.VisualBasic.dll", baseDirectory)
+                    Dim msVbDllPath As String = FindFileInSdkPath(sdkPaths, "Microsoft.Xml.dll", baseDirectory)
                     If msVbDllPath Is Nothing Then
-                        AddDiagnostic(diagnostics, ERRID.ERR_LibNotFound, "Microsoft.VisualBasic.dll")
+                        AddDiagnostic(diagnostics, ERRID.ERR_LibNotFound, "Microsoft.Xml.dll")
                     Else
                         metadataReferences.Add(
                                 New CommandLineReference(msVbDllPath, New MetadataReferenceProperties(MetadataImageKind.Assembly)))
@@ -2030,12 +2030,12 @@ lVbRuntimePlus:
             For Each id In values
                 Dim number As UShort
                 If UShort.TryParse(id, NumberStyles.Integer, CultureInfo.InvariantCulture, number) AndAlso
-                   (VisualBasic.MessageProvider.Instance.GetSeverity(number) = DiagnosticSeverity.Warning) AndAlso
-                   (VisualBasic.MessageProvider.Instance.GetWarningLevel(number) = 1) Then
+                   (Xml.MessageProvider.Instance.GetSeverity(number) = DiagnosticSeverity.Warning) AndAlso
+                   (Xml.MessageProvider.Instance.GetWarningLevel(number) = 1) Then
                     ' The id refers to a compiler warning.
                     ' Only accept real warnings from the compiler not including the command line warnings.
                     ' Also only accept the numbers that are actually declared in the enum.
-                    results.Add(VisualBasic.MessageProvider.Instance.GetIdForErrorCode(CInt(number)))
+                    results.Add(Xml.MessageProvider.Instance.GetIdForErrorCode(CInt(number)))
                 Else
                     ' Previous versions of the compiler used to report warnings (BC2026, BC2014)
                     ' whenever unrecognized warning codes were supplied in /nowarn or 
@@ -2071,7 +2071,7 @@ lVbRuntimePlus:
         End Sub
 
         Private Shared Sub AddDiagnostic(diagnostics As IList(Of Diagnostic), errorCode As ERRID, ParamArray arguments As Object())
-            diagnostics.Add(Diagnostic.Create(VisualBasic.MessageProvider.Instance, CInt(errorCode), arguments))
+            diagnostics.Add(Diagnostic.Create(Xml.MessageProvider.Instance, CInt(errorCode), arguments))
         End Sub
 
         ''' <summary>

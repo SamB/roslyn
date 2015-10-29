@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' This class represents a simple implementation of compiler generated constructors

@@ -1,7 +1,7 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports System.Collections.Immutable
-Imports Microsoft.CodeAnalysis.VisualBasic
+Imports Microsoft.CodeAnalysis.Xml
 
 Namespace Microsoft.CodeAnalysis.Diagnostics.VisualBasic
     ''' <summary>
@@ -13,7 +13,7 @@ Namespace Microsoft.CodeAnalysis.Diagnostics.VisualBasic
 
         Friend Overrides ReadOnly Property MessageProvider As CommonMessageProvider
             Get
-                Return CodeAnalysis.VisualBasic.MessageProvider.Instance
+                Return CodeAnalysis.Xml.MessageProvider.Instance
             End Get
         End Property
 

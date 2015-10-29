@@ -4,10 +4,10 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Collections
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend Class Binder
         Private Function BindXmlComment(
                                        syntax As XmlCommentSyntax,
@@ -174,7 +174,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             '        NameExpr.Loc)
             'End If
 
-            If argument.Type.IsObjectType AndAlso OptionStrict <> VisualBasic.OptionStrict.On Then
+            If argument.Type.IsObjectType AndAlso OptionStrict <> Xml.OptionStrict.On Then
                 Dim xnameType = GetWellKnownType(WellKnownType.System_Xml_Linq_XName, syntax, diagnostics)
                 argument = ApplyDirectCastConversion(syntax, argument, xnameType, diagnostics:=diagnostics)
             End If

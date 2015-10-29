@@ -6,12 +6,12 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend Class Binder
 
 #Region "Get All Attributes"
@@ -41,7 +41,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                                                  attribute As AttributeSyntax,
                                                  ownerSymbol As Symbol,
                                                  diagnostics As DiagnosticBag) As NamedTypeSymbol
-            binder = New LocationSpecificBinder(VisualBasic.BindingLocation.Attribute, ownerSymbol, binder)
+            binder = New LocationSpecificBinder(Xml.BindingLocation.Attribute, ownerSymbol, binder)
             Return DirectCast(binder.BindTypeSyntax(attribute.Name, diagnostics), NamedTypeSymbol)
         End Function
 
@@ -61,7 +61,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             For index = 0 To attributesToBind.Length - 1
                 If attributeBuilder(index) Is Nothing Then
                     Dim binder = binders(index)
-                    binder = New LocationSpecificBinder(VisualBasic.BindingLocation.Attribute, ownerSymbol, binder)
+                    binder = New LocationSpecificBinder(Xml.BindingLocation.Attribute, ownerSymbol, binder)
                     attributeBuilder(index) = binder.GetAttribute(attributesToBind(index), boundAttributeTypes(index), diagnostics)
                 End If
             Next
@@ -551,7 +551,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 If expression.Syntax.SyntaxTree IsNot Nothing AndAlso
                     Me.Compilation.ContainsSyntaxTree(expression.Syntax.SyntaxTree) Then
 
-                    ' Mark type if it is referenced in expression like 'GetType(Microsoft.VisualBasic.Strings)'
+                    ' Mark type if it is referenced in expression like 'GetType(Microsoft.Xml.Strings)'
                     If expression.Kind = BoundKind.GetType Then
                         MarkEmbeddedTypeReferencedFromGetTypeExpression(DirectCast(expression, BoundGetType))
 

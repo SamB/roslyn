@@ -7,10 +7,10 @@
 Imports System.Collections.Immutable
 Imports System.Globalization
 Imports System.Reflection
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.TypeHelpers
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.TypeHelpers
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Friend Structure ExpressionEvaluator
         Private ReadOnly _symbols As ImmutableDictionary(Of String, CConst)
 

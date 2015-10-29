@@ -6,13 +6,13 @@ Imports System.Diagnostics
 Imports System.Linq
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
 ' NOTE: VB does not support constant expressions in flow analysis during command-line compilation, but supports them when 
 '       analysis is being called via public API. This distinction is governed by 'suppressConstantExpressions' flag
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend MustInherit Class AbstractFlowPass(Of LocalState As AbstractLocalState)
         Inherits BoundTreeVisitor

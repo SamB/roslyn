@@ -3,10 +3,10 @@
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend Class Binder
 
@@ -160,7 +160,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                 If source.IsFunctionLambda Then
                     If targetReturnType.IsVoidType() Then
-                        targetReturnType = Microsoft.CodeAnalysis.VisualBasic.Symbols.LambdaSymbol.ReturnTypeVoidReplacement
+                        targetReturnType = Microsoft.CodeAnalysis.Xml.Symbols.LambdaSymbol.ReturnTypeVoidReplacement
                     End If
                 End If
             Else

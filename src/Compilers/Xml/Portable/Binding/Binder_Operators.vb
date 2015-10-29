@@ -5,11 +5,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' Binding of binary and unary operators is implemented in this part.
 
@@ -391,7 +391,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             Dim hasError As Boolean = False
 
             ' Option Strict disallows all operations on Object operands. Or, at least, warn.
-            If OptionStrict = VisualBasic.OptionStrict.On Then
+            If OptionStrict = Xml.OptionStrict.On Then
                 Dim reportedAnEror As Boolean = False
 
                 If leftType.IsObjectType Then
@@ -412,7 +412,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                         diagnostics = New DiagnosticBag()
                     End If
                 End If
-            ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then 'warn if option strict is off
+            ElseIf OptionStrict = Xml.OptionStrict.Custom Then 'warn if option strict is off
                 If Not isSelectCase OrElse preliminaryOperatorKind <> BinaryOperatorKind.OrElse Then
                     Dim errorId = If(isSelectCase, ERRID.WRN_ObjectMathSelectCase,
                                     If(preliminaryOperatorKind = BinaryOperatorKind.Equals, ERRID.WRN_ObjectMath1,
@@ -1182,9 +1182,9 @@ Done:
 
             ' Option Strict disallows all unary operations on Object operands. Otherwise just warn.
             If operandType.SpecialType = SpecialType.System_Object Then
-                If OptionStrict = VisualBasic.OptionStrict.On Then
+                If OptionStrict = Xml.OptionStrict.On Then
                     ReportDiagnostic(diagnostics, node.Operand, ErrorFactory.ErrorInfo(ERRID.ERR_StrictDisallowsObjectOperand1, node.OperatorToken))
-                ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then
+                ElseIf OptionStrict = Xml.OptionStrict.Custom Then
                     ReportDiagnostic(diagnostics, node.Operand, ErrorFactory.ErrorInfo(ERRID.WRN_ObjectMath2, node.OperatorToken))
                 End If
             End If

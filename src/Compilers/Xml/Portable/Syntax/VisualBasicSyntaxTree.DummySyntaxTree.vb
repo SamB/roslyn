@@ -3,9 +3,9 @@
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Public Partial Class VisualBasicSyntaxTree
         Friend Class DummySyntaxTree
             Inherits VisualBasicSyntaxTree

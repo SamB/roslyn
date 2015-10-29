@@ -4,13 +4,13 @@ Imports System.Text
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Blender = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.Blender
-Imports Parser = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.Parser
-Imports Scanner = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.Scanner
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Blender = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.Blender
+Imports Parser = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.Parser
+Imports Scanner = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.Scanner
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' The parsed representation of a Visual Basic source document.

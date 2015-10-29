@@ -9,13 +9,13 @@ Imports System.Threading
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
-Imports Display = Microsoft.CodeAnalysis.VisualBasic.SymbolDisplay
+Imports Display = Microsoft.CodeAnalysis.Xml.SymbolDisplay
 Imports Microsoft.CodeAnalysis.Diagnostics
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' The base class for all symbols (namespaces, classes, method, parameters, etc.) that are 
@@ -575,7 +575,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         ''' </summary>
         Friend ReadOnly Property IsEmbedded As Boolean
             Get
-                Return EmbeddedSymbolKind <> VisualBasic.Symbols.EmbeddedSymbolKind.None
+                Return EmbeddedSymbolKind <> Xml.Symbols.EmbeddedSymbolKind.None
             End Get
         End Property
 

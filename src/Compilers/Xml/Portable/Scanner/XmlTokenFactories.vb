@@ -7,11 +7,11 @@ Option Compare Binary
 
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Partial Friend Class Scanner
 
         Private Shared Function MakeMissingToken(precedingTrivia As SyntaxList(Of VisualBasicSyntaxNode), kind As SyntaxKind) As SyntaxToken

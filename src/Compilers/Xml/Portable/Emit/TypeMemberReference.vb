@@ -2,7 +2,7 @@
 
 Imports Microsoft.CodeAnalysis.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit
+Namespace Microsoft.CodeAnalysis.Xml.Emit
 
     Friend MustInherit Class TypeMemberReference
         Implements Cci.ITypeMemberReference

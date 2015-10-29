@@ -3,7 +3,7 @@
 Imports System.Globalization
 Imports Microsoft.CodeAnalysis.Text
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' The Diagnostic class allows formatting of Visual Basic diagnostics. 
     ''' </summary>

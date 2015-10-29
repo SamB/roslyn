@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports System.Collections.Immutable
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Friend Partial Class LocalRewriter
         Friend Function AddConditionSequencePoint(condition As BoundExpression, containingCatchWithFilter As BoundCatchBlock) As BoundExpression
             Debug.Assert(containingCatchWithFilter.ExceptionFilterOpt.Syntax.Parent.IsKind(SyntaxKind.CatchFilterClause))

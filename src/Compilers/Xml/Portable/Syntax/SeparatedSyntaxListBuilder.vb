@@ -2,9 +2,9 @@
 
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
 
     Friend Structure SeparatedSyntaxListBuilder(Of TNode As SyntaxNode)
         Private ReadOnly _builder As SyntaxListBuilder

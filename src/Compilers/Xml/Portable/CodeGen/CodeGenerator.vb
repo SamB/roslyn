@@ -6,10 +6,10 @@ Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Symbols
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.CodeGen
+Namespace Microsoft.CodeAnalysis.Xml.CodeGen
     Friend NotInheritable Class CodeGenerator
         Private ReadOnly _method As MethodSymbol
         Private ReadOnly _block As BoundStatement

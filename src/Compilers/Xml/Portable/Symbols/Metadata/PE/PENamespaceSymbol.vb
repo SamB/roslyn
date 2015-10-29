@@ -6,9 +6,9 @@ Imports System.Collections.ObjectModel
 Imports System.Reflection.Metadata
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     ''' <summary>
     ''' The base class to represent a namespace imported from a PE/module.

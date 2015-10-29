@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend MustInherit Class UnboundGenericType
         Inherits NamedTypeSymbol
@@ -436,18 +436,18 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
                         If containerAsConstructed IsNot Nothing Then
                             If OriginalDefinition.Arity = 0 Then
-                                result = VisualBasic.Symbols.TypeSubstitution.Concat(OriginalDefinition,
+                                result = Xml.Symbols.TypeSubstitution.Concat(OriginalDefinition,
                                                                              containerAsConstructed.TypeSubstitution,
                                                                              Nothing)
                             Else
-                                result = VisualBasic.Symbols.TypeSubstitution.Create(containerAsConstructed.TypeSubstitution,
+                                result = Xml.Symbols.TypeSubstitution.Create(containerAsConstructed.TypeSubstitution,
                                                                              OriginalDefinition,
                                                                              Me.TypeArgumentsNoUseSiteDiagnostics)
                             End If
                         Else
                             Debug.Assert(Not (TypeOf container Is NamedTypeSymbol AndAlso
                                          DirectCast(container, NamedTypeSymbol).IsGenericType))
-                            result = VisualBasic.Symbols.TypeSubstitution.Create(OriginalDefinition, OriginalDefinition.TypeParameters, Me.TypeArgumentsNoUseSiteDiagnostics)
+                            result = Xml.Symbols.TypeSubstitution.Create(OriginalDefinition, OriginalDefinition.TypeParameters, Me.TypeArgumentsNoUseSiteDiagnostics)
                         End If
 
                         Interlocked.CompareExchange(_lazyTypeSubstitution, result, Nothing)
@@ -555,7 +555,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
                 ' Add a substitution to map from type parameter definitions to corresponding
                 ' alpha-renamed type parameters.
-                Dim substitution = VisualBasic.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
+                Dim substitution = Xml.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
                                                                          StaticCast(Of TypeParameterSymbol).From(newTypeParameters))
 
                 Debug.Assert(substitution.TargetGenericDefinition Is originalDefinition)

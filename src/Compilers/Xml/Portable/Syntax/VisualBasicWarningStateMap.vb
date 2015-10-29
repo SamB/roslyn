@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
     Friend Class VisualBasicWarningStateMap
         Inherits AbstractWarningStateMap
 

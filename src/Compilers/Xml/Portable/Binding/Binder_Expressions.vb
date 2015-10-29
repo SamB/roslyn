@@ -5,13 +5,13 @@ Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 Imports System.Reflection
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' This portion of the binder converts an ExpressionSyntax into a BoundExpression
 
@@ -1309,13 +1309,13 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             Else
                 ' Possibly warn or report an error depending on the value of option strict
                 Select Case OptionStrict
-                    Case VisualBasic.OptionStrict.On
+                    Case Xml.OptionStrict.On
                         If arrayLiteral.NumberOfCandidates = 0 Then
                             ReportDiagnostic(diagnostics, arrayLiteral.Syntax, ERRID.ERR_ArrayInitNoTypeObjectDisallowed)
                         ElseIf arrayLiteral.NumberOfCandidates > 1 Then
                             ReportDiagnostic(diagnostics, arrayLiteral.Syntax, ERRID.ERR_ArrayInitTooManyTypesObjectDisallowed)
                         End If
-                    Case VisualBasic.OptionStrict.Custom
+                    Case Xml.OptionStrict.Custom
                         If arrayLiteral.NumberOfCandidates = 0 Then
                             ReportDiagnostic(diagnostics, arrayLiteral.Syntax, ErrorFactory.ErrorInfo(ERRID.WRN_ObjectAssumed1,
                                                                                                       ErrorFactory.ErrorInfo(ERRID.WRN_ArrayInitNoTypeObjectAssumed)))
@@ -1865,21 +1865,21 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             ElseIf numCandidates = 0 Then
 
                 '  TODO: Is this reachable? Check and add tests
-                If OptionStrict = VisualBasic.OptionStrict.On Then
+                If OptionStrict = Xml.OptionStrict.On Then
                     ReportDiagnostic(diagnostics, node, ERRID.ERR_IfNoTypeObjectDisallowed)
                     hasErrors = True
 
-                ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then
+                ElseIf OptionStrict = Xml.OptionStrict.Custom Then
                     ReportDiagnostic(diagnostics, node, ErrorFactory.ErrorInfo(ERRID.WRN_ObjectAssumed1, ErrorFactory.ErrorInfo(ERRID.WRN_IfNoTypeObjectAssumed)))
                 End If
 
             ElseIf numCandidates > 1 Then
 
-                If OptionStrict = VisualBasic.OptionStrict.On Then
+                If OptionStrict = Xml.OptionStrict.On Then
                     ReportDiagnostic(diagnostics, node, ERRID.ERR_IfTooManyTypesObjectDisallowed)
                     hasErrors = True
 
-                ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then
+                ElseIf OptionStrict = Xml.OptionStrict.Custom Then
                     ReportDiagnostic(diagnostics, node, ErrorFactory.ErrorInfo(ERRID.WRN_ObjectAssumed1, ErrorFactory.ErrorInfo(ERRID.WRN_IfTooManyTypesObjectAssumed)))
                 End If
 
@@ -1899,7 +1899,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
         Private Function IsMeOrMyBaseOrMyClassInSharedContext() As Boolean
             ' If we are inside an attribute then we are not in an instance context.
-            If Me.BindingLocation = VisualBasic.BindingLocation.Attribute Then
+            If Me.BindingLocation = Xml.BindingLocation.Attribute Then
                 Return True
             End If
 

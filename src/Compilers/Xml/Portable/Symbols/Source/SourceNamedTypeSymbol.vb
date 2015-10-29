@@ -7,11 +7,11 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' Represents a type or module declared in source. 
     ''' Could be a class, structure, interface, delegate, enum, or module.
@@ -315,26 +315,26 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
             If isNested Then
 
                 Select Case containingType.DeclarationKind
-                    Case VisualBasic.Symbols.DeclarationKind.Module
+                    Case Xml.Symbols.DeclarationKind.Module
                         If (foundModifiers And DeclarationModifiers.InvalidInModule) <> 0 Then
                             binder.ReportModifierError(modifiers, ERRID.ERR_ModuleCantUseTypeSpecifier1, diagBag, InvalidModifiersInModule)
                             foundModifiers = (foundModifiers And (Not DeclarationModifiers.InvalidInModule))
                         End If
 
-                    Case VisualBasic.Symbols.DeclarationKind.Interface
+                    Case Xml.Symbols.DeclarationKind.Interface
                         If (foundModifiers And DeclarationModifiers.InvalidInInterface) <> 0 Then
                             Dim err As ERRID = ERRID.ERR_None
 
                             Select Case Me.DeclarationKind
-                                Case VisualBasic.Symbols.DeclarationKind.Class
+                                Case Xml.Symbols.DeclarationKind.Class
                                     err = ERRID.ERR_BadInterfaceClassSpecifier1
-                                Case VisualBasic.Symbols.DeclarationKind.Delegate
+                                Case Xml.Symbols.DeclarationKind.Delegate
                                     err = ERRID.ERR_BadInterfaceDelegateSpecifier1
-                                Case VisualBasic.Symbols.DeclarationKind.Structure
+                                Case Xml.Symbols.DeclarationKind.Structure
                                     err = ERRID.ERR_BadInterfaceStructSpecifier1
-                                Case VisualBasic.Symbols.DeclarationKind.Enum
+                                Case Xml.Symbols.DeclarationKind.Enum
                                     err = ERRID.ERR_BadInterfaceEnumSpecifier1
-                                Case VisualBasic.Symbols.DeclarationKind.Interface
+                                Case Xml.Symbols.DeclarationKind.Interface
 
                                     ' For whatever reason, Dev10 does not report an error on [Friend] or [Public] modifier on an interface inside an interface.
                                     ' Need to handle this specially
@@ -379,7 +379,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
             ' Only nested type (not nested in a struct, nested in a class, etc. ) can be Protected.
             If (foundModifiers And DeclarationModifiers.Protected) <> 0 AndAlso
-                (Not isNested OrElse containingType.DeclarationKind <> VisualBasic.Symbols.DeclarationKind.Class) Then
+                (Not isNested OrElse containingType.DeclarationKind <> Xml.Symbols.DeclarationKind.Class) Then
                 Binder.ReportDiagnostic(diagBag, id, ERRID.ERR_ProtectedTypeOutsideClass)
                 foundModifiers = (foundModifiers And (Not DeclarationModifiers.Protected))
             End If
@@ -1969,7 +1969,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
             Dim hasAnyDiagnostics As Boolean = False
 
             If VisualBasicAttributeData.IsTargetEarlyAttribute(arguments.AttributeType, arguments.AttributeSyntax, AttributeDescription.VisualBasicEmbeddedAttribute) Then
-                ' Handle Microsoft.VisualBasic.Embedded attribute
+                ' Handle Microsoft.Xml.Embedded attribute
                 Dim attrdata = arguments.Binder.GetAttribute(arguments.AttributeSyntax, arguments.AttributeType, hasAnyDiagnostics)
                 If Not attrdata.HasErrors Then
                     arguments.GetOrCreateData(Of TypeEarlyWellKnownAttributeData)().HasEmbeddedAttribute = True

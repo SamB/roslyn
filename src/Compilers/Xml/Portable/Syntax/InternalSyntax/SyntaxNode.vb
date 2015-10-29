@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports System.Runtime.CompilerServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     <DebuggerDisplay("{GetDebuggerDisplay(), nq}")>
     Partial Friend Class VisualBasicSyntaxNode
@@ -423,7 +423,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
 
             Dim parent = trivia.Token.Parent
             If parent Is Nothing Then
-                Return VisualBasic.Syntax.StructuredTriviaSyntax.Create(trivia)
+                Return Xml.Syntax.StructuredTriviaSyntax.Create(trivia)
             End If
 
             Dim [structure] As SyntaxNode = Nothing
@@ -431,7 +431,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
 
             SyncLock structsInParent
                 If Not structsInParent.TryGetValue(trivia, [structure]) Then
-                    [structure] = VisualBasic.Syntax.StructuredTriviaSyntax.Create(trivia)
+                    [structure] = Xml.Syntax.StructuredTriviaSyntax.Create(trivia)
                     structsInParent.Add(trivia, [structure])
                 End If
             End SyncLock
@@ -476,7 +476,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
             If element.Kind = SyntaxKind.JoinCondition Then
                 separatorKind = SyntaxKind.AndKeyword
             End If
-            Return VisualBasic.SyntaxFactory.Token(separatorKind)
+            Return Xml.SyntaxFactory.Token(separatorKind)
         End Function
 
         Public Overrides Function IsTriviaWithEndOfLine() As Boolean

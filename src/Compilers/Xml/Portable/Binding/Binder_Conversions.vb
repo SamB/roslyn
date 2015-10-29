@@ -5,11 +5,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ' Binding of conversion operators is implemented in this part.
 
@@ -503,10 +503,10 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                (convKind.Key And ConversionKind.InvolvesNarrowingFromNumericConstant) = 0 Then
 
                 If copybackConversionParamName IsNot Nothing Then
-                    If OptionStrict = VisualBasic.OptionStrict.On Then
+                    If OptionStrict = Xml.OptionStrict.On Then
                         ReportDiagnostic(diagnostics, argument.Syntax, ERRID.ERR_StrictArgumentCopyBackNarrowing3,
                                                copybackConversionParamName, sourceType, targetType)
-                    ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then
+                    ElseIf OptionStrict = Xml.OptionStrict.Custom Then
                         ReportDiagnostic(diagnostics, argument.Syntax, ERRID.WRN_ImplicitConversionCopyBack,
                                                copybackConversionParamName, sourceType, targetType)
                     End If
@@ -517,11 +517,11 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                     ' ERR_NarrowingConversionCollection2 "Option Strict On disallows implicit conversions from '|1' to '|2'; 
                     '                                     the Visual Basic 6.0 collection type is not compatible with the .NET Framework collection type."
                     ' ERR_AmbiguousCastConversion2       "Option Strict On disallows implicit conversions from '|1' to '|2' because the conversion is ambiguous."
-                    ' The Collection error is for when one type is Microsoft.VisualBasic.Collection and
+                    ' The Collection error is for when one type is Microsoft.Xml.Collection and
                     ' the other type is named _Collection.
                     ' The Ambiguous error is for when the conversion was classed as "Narrowing" for reasons of ambiguity.
 
-                    If OptionStrict = VisualBasic.OptionStrict.On Then
+                    If OptionStrict = Xml.OptionStrict.On Then
 
                         If Not MakeVarianceConversionSuggestion(convKind.Key, argument.Syntax, sourceType, targetType, diagnostics, justWarn:=False) Then
                             Dim err As ERRID = ERRID.ERR_NarrowingConversionDisallowed2
@@ -538,7 +538,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                             ReportDiagnostic(diagnostics, argument.Syntax, err, sourceType, targetType)
                         End If
 
-                    ElseIf OptionStrict = VisualBasic.OptionStrict.Custom Then
+                    ElseIf OptionStrict = Xml.OptionStrict.Custom Then
 
                         ' Avoid reporting a warning if narrowing caused exclusively by "zero argument" relaxation
                         ' for an Anonymous Delegate. Note, that dropping a return is widening. 
@@ -962,7 +962,7 @@ DoneWithDiagnostics:
             If (convKind And ConversionKind.AnonymousDelegate) <> 0 Then
 
                 ' Don't spend time building a narrowing relaxation stub if we already complained about the narrowing.
-                If isExplicit OrElse OptionStrict <> VisualBasic.OptionStrict.On OrElse Conversions.IsWideningConversion(convKind) Then
+                If isExplicit OrElse OptionStrict <> Xml.OptionStrict.On OrElse Conversions.IsWideningConversion(convKind) Then
                     Debug.Assert(Not Conversions.IsIdentityConversion(convKind))
                     Debug.Assert(sourceType.IsDelegateType() AndAlso DirectCast(sourceType, NamedTypeSymbol).IsAnonymousType AndAlso targetType.IsDelegateType() AndAlso
                                  targetType.SpecialType <> SpecialType.System_MulticastDelegate)
@@ -975,13 +975,13 @@ DoneWithDiagnostics:
                         Dim relaxationBinder As Binder
 
                         ' If conversion is explicit, use Option Strict Off.
-                        If isExplicit AndAlso Me.OptionStrict <> VisualBasic.OptionStrict.Off Then
+                        If isExplicit AndAlso Me.OptionStrict <> Xml.OptionStrict.Off Then
                             relaxationBinder = New OptionStrictOffBinder(Me)
                         Else
                             relaxationBinder = Me
                         End If
 
-                        Debug.Assert(Not isExplicit OrElse relaxationBinder.OptionStrict = VisualBasic.OptionStrict.Off)
+                        Debug.Assert(Not isExplicit OrElse relaxationBinder.OptionStrict = Xml.OptionStrict.Off)
 
                         boundLambdaOpt = relaxationBinder.BuildDelegateRelaxationLambda(tree, tree, argument, methodToConvert,
                                                                                         Nothing, QualificationKind.QualifiedViaValue,
@@ -1191,13 +1191,13 @@ DoneWithDiagnostics:
                             Dim reclassifyBinder As Binder
 
                             ' If conversion is explicit, use Option Strict Off.
-                            If isExplicit AndAlso Me.OptionStrict <> VisualBasic.OptionStrict.Off Then
+                            If isExplicit AndAlso Me.OptionStrict <> Xml.OptionStrict.Off Then
                                 reclassifyBinder = New OptionStrictOffBinder(Me)
                             Else
                                 reclassifyBinder = Me
                             End If
 
-                            Debug.Assert(Not isExplicit OrElse reclassifyBinder.OptionStrict = VisualBasic.OptionStrict.Off)
+                            Debug.Assert(Not isExplicit OrElse reclassifyBinder.OptionStrict = Xml.OptionStrict.Off)
 
                             argument = reclassifyBinder.ReclassifyAddressOf(addressOfExpression, delegateResolutionResult, targetType, diagnostics, isForHandles:=False,
                                                                             warnIfResultOfAsyncMethodIsDroppedDueToRelaxation:=Not isExplicit AndAlso tree.Kind <> SyntaxKind.ObjectCreationExpression)
@@ -1410,13 +1410,13 @@ DoneWithDiagnostics:
                 Dim relaxationBinder As Binder
 
                 ' If conversion is explicit, use Option Strict Off.
-                If isExplicit AndAlso Me.OptionStrict <> VisualBasic.OptionStrict.Off Then
+                If isExplicit AndAlso Me.OptionStrict <> Xml.OptionStrict.Off Then
                     relaxationBinder = New OptionStrictOffBinder(Me)
                 Else
                     relaxationBinder = Me
                 End If
 
-                Debug.Assert(Not isExplicit OrElse relaxationBinder.OptionStrict = VisualBasic.OptionStrict.Off)
+                Debug.Assert(Not isExplicit OrElse relaxationBinder.OptionStrict = Xml.OptionStrict.Off)
 
                 relaxationLambdaOpt = relaxationBinder.BuildDelegateRelaxationLambda(unboundLambda.Syntax,
                                                                                      delegateInvoke,

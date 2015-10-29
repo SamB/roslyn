@@ -5,10 +5,10 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit
+Namespace Microsoft.CodeAnalysis.Xml.Emit
 
     ''' <summary>
     ''' Represents a reference to a generic type instantiation that is not nested.

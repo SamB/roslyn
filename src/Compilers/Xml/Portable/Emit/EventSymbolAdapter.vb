@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
+Imports Microsoft.CodeAnalysis.Xml.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Partial Class EventSymbol
         Implements Cci.IEventDefinition

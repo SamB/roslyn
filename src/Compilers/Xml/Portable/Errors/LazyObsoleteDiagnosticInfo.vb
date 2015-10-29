@@ -1,9 +1,9 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend NotInheritable Class LazyObsoleteDiagnosticInfo
         Inherits DiagnosticInfo
@@ -14,7 +14,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         Private ReadOnly _containingSymbol As Symbol
 
         Friend Sub New(sym As Symbol, containingSymbol As Symbol)
-            MyBase.New(VisualBasic.MessageProvider.Instance, ERRID.Unknown)
+            MyBase.New(Xml.MessageProvider.Instance, ERRID.Unknown)
             Me._symbol = sym
             Me._containingSymbol = containingSymbol
         End Sub

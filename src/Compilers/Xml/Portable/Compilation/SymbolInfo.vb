@@ -2,10 +2,10 @@
 
 Imports System.Collections.Immutable
 Imports System.Diagnostics
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend Class SymbolInfoFactory
         Friend Shared Function Create(symbols As ImmutableArray(Of Symbol), resultKind As LookupResultKind) As SymbolInfo

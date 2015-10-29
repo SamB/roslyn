@@ -3,9 +3,9 @@
 Imports System.Collections.Immutable
 Imports Microsoft.Cci
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit.NoPia
+Namespace Microsoft.CodeAnalysis.Xml.Emit.NoPia
 
     Friend NotInheritable Class EmbeddedMethod
         Inherits EmbeddedTypesManager.CommonEmbeddedMethod

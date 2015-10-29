@@ -5,7 +5,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Friend Module VisualBasicFileSystemExtensions
         ''' <summary>
         ''' Emit the IL for the compilation into the specified stream.

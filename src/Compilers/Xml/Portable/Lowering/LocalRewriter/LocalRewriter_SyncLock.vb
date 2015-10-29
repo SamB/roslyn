@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend NotInheritable Class LocalRewriter
 
         Public Overrides Function VisitSyncLockStatement(node As BoundSyncLockStatement) As BoundNode
@@ -77,7 +77,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             statements.Add(tempLockObjectAssignment)
 
             ' If the type of the lock object is System.Object we need to call the vb runtime helper 
-            ' Microsoft.VisualBasic.CompilerServices.ObjectFlowControl.CheckForSyncLockOnValueType to ensure no value type is 
+            ' Microsoft.Xml.CompilerServices.ObjectFlowControl.CheckForSyncLockOnValueType to ensure no value type is 
             ' used. Note that we are checking type on original bound node for LockExpression because rewritten node will
             ' always have System.Object as its type due to conversion added above.
             ' If helper not available on this platform (/vbruntime*), don't call this helper and do not report errors.

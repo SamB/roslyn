@@ -6,10 +6,10 @@ Imports System.ComponentModel
 Imports System.Reflection
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' The base class for all nodes in the VB syntax tree.
@@ -206,25 +206,25 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 Dim data = New Object() {
                     GetType(Object).GetTypeInfo().Assembly.FullName,
                     GetType(Microsoft.CodeAnalysis.DiagnosticInfo).GetTypeInfo().Assembly.FullName,
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxNode).GetTypeInfo().Assembly.FullName,
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxToken.TriviaInfo),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SimpleIdentifierSyntax),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.ComplexIdentifierSyntax),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxList),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxList.WithTwoChildren),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxList.WithThreeChildren),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxList.WithManyChildren),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxList.WithLotsOfChildren),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int32)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int16)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int64)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt32)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt16)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt64)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Byte)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of SByte)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.FloatingLiteralTokenSyntax(Of Single)),
-                    GetType(Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.FloatingLiteralTokenSyntax(Of Double)),
+                    GetType(Microsoft.CodeAnalysis.Xml.VisualBasicSyntaxNode).GetTypeInfo().Assembly.FullName,
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxToken.TriviaInfo),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SimpleIdentifierSyntax),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.ComplexIdentifierSyntax),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxList),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxList.WithTwoChildren),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxList.WithThreeChildren),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxList.WithManyChildren),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxList.WithLotsOfChildren),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int32)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int16)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Int64)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt32)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt16)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of UInt64)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of Byte)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.IntegerLiteralTokenSyntax(Of SByte)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.FloatingLiteralTokenSyntax(Of Single)),
+                    GetType(Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.FloatingLiteralTokenSyntax(Of Double)),
                     GetType(Microsoft.CodeAnalysis.DiagnosticInfo),
                     GetType(Microsoft.CodeAnalysis.SyntaxAnnotation)
                 } _

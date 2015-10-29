@@ -3,9 +3,9 @@
 Imports System
 Imports System.Collections.Generic
 Imports System.Diagnostics
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend Class DiagnosticsPass
 

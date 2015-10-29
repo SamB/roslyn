@@ -6,10 +6,10 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Linq
 Imports Microsoft.CodeAnalysis.CodeGen
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.CodeGen
+Namespace Microsoft.CodeAnalysis.Xml.CodeGen
 
     Friend Partial Class CodeGenerator
         Private _recursionDepth As Integer

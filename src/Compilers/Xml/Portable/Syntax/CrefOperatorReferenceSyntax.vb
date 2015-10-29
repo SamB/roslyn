@@ -2,7 +2,7 @@
 
 Imports System.ComponentModel
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
 
     Partial Public Class CrefOperatorReferenceSyntax
 

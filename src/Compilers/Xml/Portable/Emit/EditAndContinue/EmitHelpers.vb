@@ -8,7 +8,7 @@ Imports Microsoft.CodeAnalysis
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit
+Namespace Microsoft.CodeAnalysis.Xml.Emit
 
     Friend Module EmitHelpers
 

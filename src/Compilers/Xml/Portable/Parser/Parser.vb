@@ -7,9 +7,9 @@
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxFactory
+Imports InternalSyntaxFactory = Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxFactory
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
 
     Friend Class Parser
         Implements ISyntaxFactoryContext, IDisposable
@@ -441,7 +441,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
                     New SyntaxList(Of VisualBasicSyntaxNode)(),
                     New SyntaxList(Of VisualBasicSyntaxNode)(),
                     New SyntaxList(Of VisualBasicSyntaxNode)(),
-                    Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.SyntaxFactory.EndOfFileToken()))
+                    Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax.SyntaxFactory.EndOfFileToken()))
         End Function
 
         Friend Function ParseCompilationUnitCore() As CompilationUnitSyntax

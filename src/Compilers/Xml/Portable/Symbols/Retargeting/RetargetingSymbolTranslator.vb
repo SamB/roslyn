@@ -6,11 +6,11 @@ Imports System.Collections.Immutable
 Imports System.Collections.ObjectModel
 Imports Microsoft.Cci
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
 
     Friend Enum RetargetOptions As Byte
         RetargetPrimitiveTypesByName = 0

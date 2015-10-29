@@ -6,10 +6,10 @@ Imports System.Reflection.Metadata.Ecma335
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit
+Namespace Microsoft.CodeAnalysis.Xml.Emit
     ''' <summary>
     ''' Matches symbols from an assembly in one compilation to
     ''' the corresponding assembly in another. Assumes that only

@@ -6,10 +6,10 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' Represents a <see cref="VisualBasicSyntaxVisitor"/> which descends an entire <see cref="SyntaxNode"/> graph and
     ''' may replace or remove visited SyntaxNodes in depth-first order.

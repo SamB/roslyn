@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend NotInheritable Class LocalRewriter
         Public Overrides Function VisitRedimClause(node As BoundRedimClause) As BoundNode
             '  array type must be known if the node is valid
@@ -24,7 +24,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
             Dim copyArrayUtilityMethod As MethodSymbol = Nothing
             If node.Preserve AndAlso TryGetWellknownMember(copyArrayUtilityMethod, WellKnownMember.Microsoft_VisualBasic_CompilerServices_Utils__CopyArray, node.Syntax) Then
-                ' build a call to Microsoft.VisualBasic.CompilerServices.Utils.CopyArray
+                ' build a call to Microsoft.Xml.CompilerServices.Utils.CopyArray
 
                 '  use the operand twice
                 temporaries = ArrayBuilder(Of SynthesizedLocal).GetInstance()

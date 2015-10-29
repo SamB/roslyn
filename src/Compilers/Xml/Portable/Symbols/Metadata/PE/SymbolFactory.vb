@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports System.Diagnostics
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     Friend NotInheritable Class SymbolFactory
         Inherits SymbolFactory(Of PEModuleSymbol, TypeSymbol)

@@ -5,12 +5,12 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports Roslyn.Utilities
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Enum SymbolComparisonResults
         NameMismatch = 1 << 0
         ReturnTypeMismatch = 1 << 1
@@ -137,7 +137,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
         ''' <summary>
         ''' This instance is used to search for methods that have the same signature, return type,
-        ''' and constraints according to the VisualBasic definition.  Custom modifiers are ignored.
+        ''' and constraints according to the Xml definition.  Custom modifiers are ignored.
         ''' </summary>
         Public Shared ReadOnly VisualBasicSignatureAndConstraintsAndReturnTypeComparer As MethodSignatureComparer =
             New MethodSignatureComparer(considerName:=True,

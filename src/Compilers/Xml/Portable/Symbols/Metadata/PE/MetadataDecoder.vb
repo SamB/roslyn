@@ -5,9 +5,9 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Reflection.Metadata
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     ''' <summary>
     ''' Helper class to resolve metadata tokens and signatures.

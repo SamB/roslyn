@@ -3,7 +3,7 @@
 Imports System.IO
 Imports System.Reflection
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Class EmbeddedResources
 

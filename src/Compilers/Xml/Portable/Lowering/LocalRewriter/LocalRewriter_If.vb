@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Friend NotInheritable Class LocalRewriter
         Public Overrides Function VisitIfStatement(node As BoundIfStatement) As BoundNode
             Dim syntax = node.Syntax

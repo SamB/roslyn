@@ -4,10 +4,10 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
     ''' <summary>
     ''' Represents a retargeting custom attribute
     ''' </summary>

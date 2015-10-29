@@ -5,7 +5,7 @@ Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis
 Imports Microsoft.CodeAnalysis.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Partial Friend NotInheritable Class AnonymousTypeManager
 
         Private Class AnonymousDelegateTemplateSymbol

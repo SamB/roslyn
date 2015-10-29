@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports System.Linq
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' Represents an interactive code entry point that is inserted into the compilation if there is not an existing one.
     ''' </summary>

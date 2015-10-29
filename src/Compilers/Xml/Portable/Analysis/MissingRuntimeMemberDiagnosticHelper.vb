@@ -1,6 +1,6 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-Imports Microsoft.CodeAnalysis.VisualBasic
+Imports Microsoft.CodeAnalysis.Xml
 
 Namespace Microsoft.CodeAnalysis
 
@@ -11,11 +11,11 @@ Namespace Microsoft.CodeAnalysis
         ' Details on these types and the feature name which is displayed in the diagnostic
         ' for those items missing in VB Core compilation.
         Private ReadOnly s_metadataNames As New Dictionary(Of String, String) From {
-                                                                                    {"Microsoft.VisualBasic.CompilerServices.Operators", "Late binding"},
-                                                                                    {"Microsoft.VisualBasic.CompilerServices.NewLateBinding", "Late binding"},
-                                                                                    {"Microsoft.VisualBasic.CompilerServices.LikeOperator", "Like operator"},
-                                                                                    {"Microsoft.VisualBasic.CompilerServices.ProjectData", "Unstructured exception handling"},
-                                                                                    {"Microsoft.VisualBasic.CompilerServices.ProjectData.CreateProjectError", "Unstructured exception handling"}
+                                                                                    {"Microsoft.Xml.CompilerServices.Operators", "Late binding"},
+                                                                                    {"Microsoft.Xml.CompilerServices.NewLateBinding", "Late binding"},
+                                                                                    {"Microsoft.Xml.CompilerServices.LikeOperator", "Like operator"},
+                                                                                    {"Microsoft.Xml.CompilerServices.ProjectData", "Unstructured exception handling"},
+                                                                                    {"Microsoft.Xml.CompilerServices.ProjectData.CreateProjectError", "Unstructured exception handling"}
                                                                                  }
 
         Friend Function GetDiagnosticForMissingRuntimeHelper(typename As String, membername As String, embedVBCoreRuntime As Boolean) As DiagnosticInfo

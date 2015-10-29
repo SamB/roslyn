@@ -2,10 +2,10 @@
 
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend Class Binder
 
@@ -166,7 +166,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                         Else
                             If fieldSymbol.Type.IsObjectType() AndAlso
-                               initializerBinder.OptionStrict <> VisualBasic.OptionStrict.On AndAlso
+                               initializerBinder.OptionStrict <> Xml.OptionStrict.On AndAlso
                                fieldSymbol.Syntax IsNot Nothing AndAlso
                                fieldSymbol.Syntax.Kind = SyntaxKind.ModifiedIdentifier Then
                                 Dim identifier = DirectCast(fieldSymbol.Syntax, ModifiedIdentifierSyntax)

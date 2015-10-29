@@ -7,9 +7,9 @@ Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
 Namespace Microsoft.CodeAnalysis
     ''' <summary>
@@ -160,7 +160,7 @@ Namespace Microsoft.CodeAnalysis
     End Module
 End Namespace
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Public Module VisualBasicExtensions
         Friend Function IsVisualBasicKind(rawKind As Integer) As Boolean
             Const LastPossibleVisualBasicKind As Integer = 8192

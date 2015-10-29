@@ -25,7 +25,7 @@
 ' //
 ' //-------------------------------------------------------------------------------------------------
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend Enum ERRID
         Void = InternalErrorCode.Void

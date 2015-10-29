@@ -8,11 +8,11 @@ Imports System.Threading
 Imports System.Reflection
 Imports System.Reflection.Metadata
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     ''' <summary>
     ''' The class to represent all methods imported from a PE/module.

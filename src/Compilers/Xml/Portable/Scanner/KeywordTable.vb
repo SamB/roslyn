@@ -1,8 +1,8 @@
 ﻿' Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax.OperatorPrecedence
+Imports Microsoft.CodeAnalysis.Xml.Syntax.OperatorPrecedence
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
     Friend Class KeywordTable
 
         Shared Sub New()

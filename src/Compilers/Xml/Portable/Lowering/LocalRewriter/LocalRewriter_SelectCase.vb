@@ -5,12 +5,12 @@ Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports Roslyn.Utilities
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ' Rewriting for select case statement.
     ' 
     ' Select case statements can be rewritten as: Switch Table or an If list.
@@ -331,7 +331,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         End Function
 
         ' Checks whether we are generating a hash table based string switch
-        Private Shared Function ShouldGenerateHashTableSwitch([module] As Microsoft.CodeAnalysis.VisualBasic.Emit.PEModuleBuilder, node As BoundSelectStatement) As Boolean
+        Private Shared Function ShouldGenerateHashTableSwitch([module] As Microsoft.CodeAnalysis.Xml.Emit.PEModuleBuilder, node As BoundSelectStatement) As Boolean
             Debug.Assert(Not node.HasErrors)
             Debug.Assert(node.ExpressionStatement.Expression.Type.IsStringType)
             Debug.Assert(node.RecommendSwitchTable)

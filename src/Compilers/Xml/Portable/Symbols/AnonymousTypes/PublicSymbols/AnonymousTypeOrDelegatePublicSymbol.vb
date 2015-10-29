@@ -4,7 +4,7 @@ Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports System.Threading
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Partial Friend NotInheritable Class AnonymousTypeManager
 
         Friend MustInherit Class AnonymousTypeOrDelegatePublicSymbol

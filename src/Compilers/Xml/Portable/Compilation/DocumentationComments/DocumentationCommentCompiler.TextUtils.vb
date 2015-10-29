@@ -4,9 +4,9 @@ Imports System.Reflection
 Imports System.Resources
 Imports System.Runtime.InteropServices
 Imports System.Xml
-Imports Microsoft.CodeAnalysis.VisualBasic
+Imports Microsoft.CodeAnalysis.Xml
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Public Class VisualBasicCompilation
 
         Partial Friend Class DocumentationCommentCompiler

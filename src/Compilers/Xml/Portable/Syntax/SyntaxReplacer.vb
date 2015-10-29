@@ -4,10 +4,10 @@ Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
 
     Friend Class SyntaxReplacer
         Friend Shared Function Replace(Of TNode As SyntaxNode)(

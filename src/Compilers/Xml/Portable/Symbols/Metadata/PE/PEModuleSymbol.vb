@@ -6,10 +6,10 @@ Imports System.Reflection
 Imports System.Reflection.Metadata
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     ''' <summary>
     ''' Represents a net-module imported from a PE. Can be a primary module of an assembly. 

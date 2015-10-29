@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports System.Threading
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Partial Friend NotInheritable Class AnonymousTypeManager
 

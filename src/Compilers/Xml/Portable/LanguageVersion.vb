@@ -2,7 +2,7 @@
 
 Imports System.Runtime.CompilerServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' Supported Visual Basic language versions.
     ''' </summary>

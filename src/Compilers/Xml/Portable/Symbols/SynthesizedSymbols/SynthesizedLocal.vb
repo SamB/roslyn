@@ -3,9 +3,9 @@
 Imports System.Collections.Immutable
 Imports System.Text
 Imports Microsoft.CodeAnalysis.CodeGen
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     <DebuggerDisplay("{GetDebuggerDisplay(), nq}")>
     Friend Class SynthesizedLocal

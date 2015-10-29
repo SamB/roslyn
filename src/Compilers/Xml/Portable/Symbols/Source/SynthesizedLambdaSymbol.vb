@@ -3,7 +3,7 @@
 Imports System.Collections.Immutable
 Imports System.Runtime.CompilerServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Represents a synthesized lambda. 

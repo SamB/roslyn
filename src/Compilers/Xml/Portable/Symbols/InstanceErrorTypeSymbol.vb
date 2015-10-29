@@ -2,10 +2,10 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' The base class for potentially constructible (i.e. with known arity) error type symbols
@@ -92,7 +92,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                     ' We don't alpha-rename type parameters of error type symbols because they don't have constraints
                     ' and, therefore, have nothing to substitute. Just use identity substitution.
                     Debug.Assert(newContainer.TypeSubstitution IsNot Nothing)
-                    substitution = VisualBasic.Symbols.TypeSubstitution.Concat(Me, newContainer.TypeSubstitution, Nothing)
+                    substitution = Xml.Symbols.TypeSubstitution.Concat(Me, newContainer.TypeSubstitution, Nothing)
                 End If
 
                 Return New SubstitutedErrorType(newContainer, Me, substitution)

@@ -4,9 +4,9 @@
 ' Contains the definition of the Scanner, which produces tokens from text 
 '-----------------------------------------------------------------------------
 
-Imports Microsoft.CodeAnalysis.VisualBasic.SyntaxFacts
+Imports Microsoft.CodeAnalysis.Xml.SyntaxFacts
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Partial Friend Class Scanner
 
         Private Function ScanInterpolatedStringPunctuation() As SyntaxToken

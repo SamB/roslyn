@@ -6,11 +6,11 @@ Imports System.Runtime.InteropServices
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Represents a type other than an array, a type parameter.
@@ -266,7 +266,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
         Public MustOverride ReadOnly Property MightContainExtensionMethods As Boolean Implements INamedTypeSymbol.MightContainExtensionMethods
 
         ''' <summary>
-        ''' Returns True if the type is marked by 'Microsoft.VisualBasic.Embedded' attribute. 
+        ''' Returns True if the type is marked by 'Microsoft.Xml.Embedded' attribute. 
         ''' </summary>
         Friend MustOverride ReadOnly Property HasEmbeddedAttribute As Boolean
 

@@ -7,10 +7,10 @@ Imports System.IO
 Imports System.Text
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports Microsoft.CodeAnalysis.Text
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Public Class VisualBasicCompilation
         Partial Friend Class DocumentationCommentCompiler
             Inherits VisualBasicSymbolVisitor

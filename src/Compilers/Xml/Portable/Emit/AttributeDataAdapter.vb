@@ -3,9 +3,9 @@
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
+Imports Microsoft.CodeAnalysis.Xml.Emit
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Friend Partial Class VisualBasicAttributeData
         Implements Cci.ICustomAttribute

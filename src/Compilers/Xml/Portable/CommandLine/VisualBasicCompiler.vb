@@ -5,7 +5,7 @@ Imports System.IO
 Imports System.Threading.Tasks
 Imports Microsoft.CodeAnalysis.Diagnostics
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend MustInherit Class VisualBasicCompiler
         Inherits CommonCompiler

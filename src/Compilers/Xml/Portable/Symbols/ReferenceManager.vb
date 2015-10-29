@@ -2,13 +2,13 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Collections
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols.Retargeting
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
+Imports Microsoft.CodeAnalysis.Xml.Symbols.Retargeting
 Imports MetadataOrDiagnostic = System.Object
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Public NotInheritable Class VisualBasicCompilation
         ''' <summary>
@@ -87,7 +87,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
             Protected Overrides ReadOnly Property MessageProvider As CommonMessageProvider
                 Get
-                    Return VisualBasic.MessageProvider.Instance
+                    Return Xml.MessageProvider.Instance
                 End Get
             End Property
 

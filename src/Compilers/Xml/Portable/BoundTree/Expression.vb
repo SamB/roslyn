@@ -4,7 +4,7 @@ Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Semantics
 Imports Roslyn.Utilities
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend MustInherit Class BoundNode
         Implements IOperationSearchable

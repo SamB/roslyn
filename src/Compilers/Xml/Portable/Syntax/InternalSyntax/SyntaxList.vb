@@ -8,10 +8,10 @@ Imports System.Runtime.CompilerServices
 Imports System.Text
 Imports Microsoft.CodeAnalysis
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Friend MustInherit Class SyntaxList
         Inherits VisualBasicSyntaxNode
 
@@ -191,7 +191,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
             End Function
 
             Friend Overrides Function CreateRed(parent As SyntaxNode, startLocation As Integer) As SyntaxNode
-                Return New VisualBasic.Syntax.SyntaxList.WithTwoChildren(Me, parent, startLocation)
+                Return New Xml.Syntax.SyntaxList.WithTwoChildren(Me, parent, startLocation)
             End Function
 
             Friend Overrides Function SetDiagnostics(errors() As DiagnosticInfo) As GreenNode
@@ -282,7 +282,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
             End Function
 
             Friend Overrides Function CreateRed(parent As SyntaxNode, startLocation As Integer) As SyntaxNode
-                Return New VisualBasic.Syntax.SyntaxList.WithThreeChildren(Me, parent, startLocation)
+                Return New Xml.Syntax.SyntaxList.WithThreeChildren(Me, parent, startLocation)
             End Function
 
             Friend Overrides Function SetDiagnostics(errors() As DiagnosticInfo) As GreenNode
@@ -365,21 +365,21 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
 
             'TODO: weakening heuristic may need some tuning.
             Private Shared Function ShouldMakeWeakList(parent As SyntaxNode) As Boolean
-                Return parent IsNot Nothing AndAlso TypeOf parent Is VisualBasic.Syntax.MethodBlockBaseSyntax
+                Return parent IsNot Nothing AndAlso TypeOf parent Is Xml.Syntax.MethodBlockBaseSyntax
             End Function
 
             Friend Overrides Function CreateRed(parent As SyntaxNode, startLocation As Integer) As SyntaxNode
                 Dim isSeparated = SlotCount > 1 AndAlso HasNodeTokenPattern()
                 If ShouldMakeWeakList(parent) Then
                     If isSeparated Then
-                        Return New VisualBasic.Syntax.SyntaxList.WeakSeparatedWithManyChildren(Me, parent, startLocation)
+                        Return New Xml.Syntax.SyntaxList.WeakSeparatedWithManyChildren(Me, parent, startLocation)
                     End If
-                    Return New VisualBasic.Syntax.SyntaxList.WeakWithManyChildren(Me, parent, startLocation)
+                    Return New Xml.Syntax.SyntaxList.WeakWithManyChildren(Me, parent, startLocation)
                 Else
                     If isSeparated Then
-                        Return New VisualBasic.Syntax.SyntaxList.SeparatedWithManyChildren(Me, parent, startLocation)
+                        Return New Xml.Syntax.SyntaxList.SeparatedWithManyChildren(Me, parent, startLocation)
                     End If
-                    Return New VisualBasic.Syntax.SyntaxList.WithManyChildren(Me, parent, startLocation)
+                    Return New Xml.Syntax.SyntaxList.WithManyChildren(Me, parent, startLocation)
                 End If
             End Function
 

@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Diagnostics
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Friend Partial Class LocalRewriter
 
         Private Const s_activeHandler_None As Integer = 0
@@ -112,16 +112,16 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             '         Goto OnErrorFailure
             '
             '     Catch e As Exception When (VB$ActiveHandler <> 0) And (VB$ResumeTarget = 0)
-            '         Microsoft.VisualBasic.CompilerServices.ProjectData.SetProjectError(e)
+            '         Microsoft.Xml.CompilerServices.ProjectData.SetProjectError(e)
             '         Goto OnError
             '     End Try
             '
             ' OnErrorFailure:
-            '     Throw Microsoft.VisualBasic.CompilerServices.ProjectData.CreateProjectError(&H800A0033)
+            '     Throw Microsoft.Xml.CompilerServices.ProjectData.CreateProjectError(&H800A0033)
             '
             ' Done:
             '     If VB$ResumeTarget <> 0
-            '         Microsoft.VisualBasic.CompilerServices.ProjectData.ClearProjectError()
+            '         Microsoft.Xml.CompilerServices.ProjectData.ClearProjectError()
             '     End If
             '-----------------------------------------------------------------------
             '

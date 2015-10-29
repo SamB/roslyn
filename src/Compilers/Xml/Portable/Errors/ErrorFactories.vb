@@ -4,9 +4,9 @@ Imports System.Collections.Immutable
 Imports System.Globalization
 Imports System.Reflection
 Imports Microsoft.CodeAnalysis.Collections
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend Class ErrorFactory
 
@@ -146,7 +146,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         Inherits DiagnosticInfo
 
         Friend Sub New(arguments As DiagnosticInfo())
-            MyBase.New(VisualBasic.MessageProvider.Instance, 0, arguments)
+            MyBase.New(Xml.MessageProvider.Instance, 0, arguments)
         End Sub
 
         Public Overrides Function GetMessage(Optional formatProvider As IFormatProvider = Nothing) As String

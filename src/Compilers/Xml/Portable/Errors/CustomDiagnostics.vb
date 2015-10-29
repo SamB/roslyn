@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ' If a DiagnosticInfo contains symbols that should be returned through the binding API,
     ' it should implement this interface and return the symbols associated with the DiagnosticInfo
     ' via GetAssociatedSymbols
@@ -32,7 +32,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
         ' Create a new bad symbol diagnostic with the given error id and arguments. The symbols
         ' is not automatically filled in as an argument.
         Friend Sub New(badSymbol As Symbol, errid As ERRID, ParamArray additionalArgs As Object())
-            MyBase.New(VisualBasic.MessageProvider.Instance, errid, additionalArgs)
+            MyBase.New(Xml.MessageProvider.Instance, errid, additionalArgs)
             _badSymbol = badSymbol
         End Sub
 
@@ -71,7 +71,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
         ' Create a new ambiguous symbol diagnostic with the give error id and error arguments.
         Friend Sub New(errid As ERRID, symbols As ImmutableArray(Of Symbol), ParamArray args As Object())
-            MyBase.New(VisualBasic.MessageProvider.Instance, errid, args)
+            MyBase.New(Xml.MessageProvider.Instance, errid, args)
             _symbols = symbols
         End Sub
 

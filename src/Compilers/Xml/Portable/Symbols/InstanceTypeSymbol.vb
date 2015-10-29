@@ -3,10 +3,10 @@
 Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' An InstanceTypeSymbol is a NamedTypeSymbol that is a pure instance type, where the class
     ''' (and any containing classes) have no type substitutions applied.
@@ -52,7 +52,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
         Public NotOverridable Overrides Function Construct(typeArguments As ImmutableArray(Of TypeSymbol)) As NamedTypeSymbol
             CheckCanConstructAndTypeArguments(typeArguments)
 
-            Dim substitution = VisualBasic.Symbols.TypeSubstitution.Create(Me, Me.TypeParameters, typeArguments, allowAlphaRenamedTypeParametersAsArguments:=True)
+            Dim substitution = Xml.Symbols.TypeSubstitution.Create(Me, Me.TypeParameters, typeArguments, allowAlphaRenamedTypeParametersAsArguments:=True)
 
             If substitution Is Nothing Then
                 Return Me

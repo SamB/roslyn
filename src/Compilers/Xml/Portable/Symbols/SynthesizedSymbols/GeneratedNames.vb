@@ -5,7 +5,7 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Collections
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Helper class to generate synthesized names.

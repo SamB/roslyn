@@ -3,10 +3,10 @@
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Collections
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 #Disable Warning RS0010
     ''' <summary>
-    ''' Displays a symbol in the VisualBasic style.
+    ''' Displays a symbol in the Xml style.
     ''' </summary>
     ''' <seealso cref="T:Microsoft.CodeAnalysis.CSharp.Symbols.SymbolDisplay"/>
 #Enable Warning RS0010

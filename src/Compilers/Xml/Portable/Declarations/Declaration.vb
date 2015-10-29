@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     '''<summary>
     ''' A Declaration summarizes the declaration structure of a source file. Each entity declaration
     ''' in the program that is a container (specifically namespaces, classes, interfaces, structs,

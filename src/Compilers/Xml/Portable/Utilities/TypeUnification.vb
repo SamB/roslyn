@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports System.Diagnostics
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend Class TypeUnification
         ''' <summary>

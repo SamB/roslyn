@@ -4,7 +4,7 @@ Imports System.Collections.Immutable
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Friend Module TypeSymbolExtensions
 
         <Extension()>
@@ -145,7 +145,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
             ' Based on Dev10 codebase, only ApplyConversion is going to use
             ' this method. 
             ' Note, the comparison should be case-sensitive, similar to metadata resolution.
-            Const [namespace] As String = "Microsoft.VisualBasic"
+            Const [namespace] As String = "Microsoft.Xml"
             Const name As String = "Collection"
 
             If type.SpecialType = SpecialType.None AndAlso
@@ -664,8 +664,8 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                             Return False
                         End If
 
-                        Dim conversion = Global.Microsoft.CodeAnalysis.VisualBasic.Conversions.ClassifyDirectCastConversion(matchingTypeArgument, typeArgument, useSiteDiagnostics)
-                        If Global.Microsoft.CodeAnalysis.VisualBasic.Conversions.IsWideningConversion(conversion) Then
+                        Dim conversion = Global.Microsoft.CodeAnalysis.Xml.Conversions.ClassifyDirectCastConversion(matchingTypeArgument, typeArgument, useSiteDiagnostics)
+                        If Global.Microsoft.CodeAnalysis.Xml.Conversions.IsWideningConversion(conversion) Then
                             Return True
                         End If
                     Next

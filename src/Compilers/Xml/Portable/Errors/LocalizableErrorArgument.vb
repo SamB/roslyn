@@ -2,7 +2,7 @@
 
 Imports System.Globalization
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' The LocalizableErrorArgument class contains members that allows formatting and serialization of error arguments.

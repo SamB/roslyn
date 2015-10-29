@@ -3,9 +3,9 @@
 Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis
-Imports Microsoft.CodeAnalysis.VisualBasic
+Imports Microsoft.CodeAnalysis.Xml
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' Applies Visual Basic-specific modification and filtering of <see cref="Diagnostic"/>s.
     ''' </summary>
@@ -58,10 +58,10 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
             Dim hasSourceSuppression As Boolean = False
 
             If (s_alinkWarnings.Contains(CType(diagnostic.Code, ERRID)) AndAlso
-                caseInsensitiveSpecificDiagnosticOptions.Keys.Contains(VisualBasic.MessageProvider.Instance.GetIdForErrorCode(ERRID.WRN_AssemblyGeneration1))) Then
-                report = GetDiagnosticReport(VisualBasic.MessageProvider.Instance.GetSeverity(ERRID.WRN_AssemblyGeneration1),
+                caseInsensitiveSpecificDiagnosticOptions.Keys.Contains(Xml.MessageProvider.Instance.GetIdForErrorCode(ERRID.WRN_AssemblyGeneration1))) Then
+                report = GetDiagnosticReport(Xml.MessageProvider.Instance.GetSeverity(ERRID.WRN_AssemblyGeneration1),
                 diagnostic.IsEnabledByDefault,
-                VisualBasic.MessageProvider.Instance.GetIdForErrorCode(ERRID.WRN_AssemblyGeneration1),
+                Xml.MessageProvider.Instance.GetIdForErrorCode(ERRID.WRN_AssemblyGeneration1),
                 diagnostic.Location,
                 diagnostic.Category,
                 generalDiagnosticOption,

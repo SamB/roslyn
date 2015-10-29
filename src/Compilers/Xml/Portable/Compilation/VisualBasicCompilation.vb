@@ -14,11 +14,11 @@ Imports Microsoft.CodeAnalysis.Emit
 Imports Microsoft.CodeAnalysis.InternalUtilities
 Imports Microsoft.CodeAnalysis.Symbols
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Emit
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     ''' <summary>
     ''' The Compilation object is an immutable representation of a single invocation of the
@@ -1850,7 +1850,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
         Friend Overrides ReadOnly Property MessageProvider As CommonMessageProvider
             Get
-                Return VisualBasic.MessageProvider.Instance
+                Return Xml.MessageProvider.Instance
             End Get
         End Property
 

@@ -6,11 +6,11 @@ Imports System.Diagnostics
 Imports System.Linq
 Imports System.Runtime.CompilerServices
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
 'TODO - This is copied from C# and should be moved to common assemble.
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Friend Module FunctionExtensions
 

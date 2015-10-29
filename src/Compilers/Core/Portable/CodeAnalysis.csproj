@@ -702,6 +702,7 @@
   <ItemGroup>
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.CSharp" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic" />
+    <InternalsVisibleTo Include="Microsoft.CodeAnalysis.Xml" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.ExpressionEvaluator.ExpressionCompiler" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.CSharp.ExpressionEvaluator.ExpressionCompiler" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic.ExpressionEvaluator.ExpressionCompiler" />

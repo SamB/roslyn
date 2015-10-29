@@ -2,9 +2,9 @@
 
 Imports System.Collections.Immutable
 Imports Microsoft.CodeAnalysis.Emit
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Emit
+Namespace Microsoft.CodeAnalysis.Xml.Emit
 
     Friend NotInheritable Class ParameterTypeInformation
         Implements Cci.IParameterTypeInformation

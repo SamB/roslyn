@@ -4,11 +4,11 @@ Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports Microsoft.CodeAnalysis.Collections
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 Imports TypeKind = Microsoft.CodeAnalysis.TypeKind
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Friend Class Binder
 
@@ -33,7 +33,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
             receiver = AdjustReceiverAmbiguousTypeOrValue(receiver, diagnostics)
 
-            If OptionStrict = VisualBasic.OptionStrict.On Then
+            If OptionStrict = Xml.OptionStrict.On Then
                 ' "Option Strict On disallows late binding."
                 If Not suppressLateBindingResolutionDiagnostics Then
                     ReportDiagnostic(diagnostics, node, ERRID.ERR_StrictDisallowsLateBinding)
@@ -50,7 +50,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                 Return BadExpression(node, children.ToImmutableAndFree, ErrorTypeSymbol.UnknownResultType)
 
-            ElseIf OptionStrict = VisualBasic.OptionStrict.Custom AndAlso Not suppressLateBindingResolutionDiagnostics Then
+            ElseIf OptionStrict = Xml.OptionStrict.Custom AndAlso Not suppressLateBindingResolutionDiagnostics Then
                 ReportDiagnostic(diagnostics, node, ERRID.WRN_LateBindingResolution)
             End If
 
@@ -131,7 +131,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 Return BadExpression(node, StaticCast(Of BoundNode).From(arguments), ErrorTypeSymbol.UnknownResultType)
             End If
 
-            If OptionStrict = VisualBasic.OptionStrict.On Then
+            If OptionStrict = Xml.OptionStrict.On Then
                 Debug.Assert(Not suppressLateBindingResolutionDiagnostics)
 
                 ' "Option Strict On disallows late binding."
@@ -148,7 +148,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
 
                 Return BadExpression(node, children.ToImmutableAndFree, ErrorTypeSymbol.UnknownResultType)
 
-            ElseIf OptionStrict = VisualBasic.OptionStrict.Custom AndAlso Not suppressLateBindingResolutionDiagnostics Then
+            ElseIf OptionStrict = Xml.OptionStrict.Custom AndAlso Not suppressLateBindingResolutionDiagnostics Then
                 ReportDiagnostic(diagnostics, GetLocationForOverloadResolutionDiagnostic(node, groupOpt), ERRID.WRN_LateBindingResolution)
             End If
 

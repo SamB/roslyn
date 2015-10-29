@@ -5,10 +5,10 @@ Imports System.Collections.Immutable
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ' Handler the parts of binding for binding types.
     Partial Friend Class Binder
         ''' <summary>
@@ -233,7 +233,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic
                 Dim bestResult As MemberResolutionResult(Of TMember) ? = Nothing
 
                 For i As Integer = 0 To internalResult.Candidates.Length - 1 Step 1
-                    If succeeded AndAlso internalResult.Candidates(i).State = VisualBasic.OverloadResolution.CandidateAnalysisResultState.Applicable Then
+                    If succeeded AndAlso internalResult.Candidates(i).State = Xml.OverloadResolution.CandidateAnalysisResultState.Applicable Then
                         validResult = New MemberResolutionResult(Of TMember)(internalResult.Candidates(i), True)
                         bestResult = validResult
                         results(i) = validResult.Value

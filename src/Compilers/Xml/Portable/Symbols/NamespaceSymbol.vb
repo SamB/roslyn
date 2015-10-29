@@ -4,10 +4,10 @@ Imports System.Collections.Generic
 Imports System.Collections.Immutable
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ''' <summary>
     ''' Represents a namespace.
     ''' </summary>
@@ -382,7 +382,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
 Done:
             If namedType Is Nothing Then
-                If fullEmittedName.FullName.StartsWith("Microsoft.CodeAnalysis.VisualBasic.Syntax.SyntaxList", StringComparison.Ordinal) Then
+                If fullEmittedName.FullName.StartsWith("Microsoft.CodeAnalysis.Xml.Syntax.SyntaxList", StringComparison.Ordinal) Then
                     Stop
                 End If
 

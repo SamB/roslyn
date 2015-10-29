@@ -7,7 +7,7 @@ Imports System.Diagnostics
 Imports System.Threading
 Imports Microsoft.CodeAnalysis
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Partial Friend NotInheritable Class AnonymousTypeManager
 

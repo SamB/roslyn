@@ -5,11 +5,11 @@ Imports System.IO
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Collections
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 Imports System.Xml.Linq
 Imports Microsoft.CodeAnalysis.Text
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     Partial Public Class VisualBasicCompilation
 
         Partial Friend Class DocumentationCommentCompiler

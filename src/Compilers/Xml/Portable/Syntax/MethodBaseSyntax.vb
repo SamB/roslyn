@@ -2,7 +2,7 @@
 
 Imports System.ComponentModel
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax
 
     Partial Public Class MethodBaseSyntax
 
@@ -286,7 +286,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
 
 End Namespace
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
 
     Partial Public Class SyntaxFacts
 

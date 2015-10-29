@@ -2,7 +2,7 @@
 
 Imports Microsoft.Cci
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     Partial Friend MustInherit Class NamespaceSymbol
         Implements Cci.INamespace
 

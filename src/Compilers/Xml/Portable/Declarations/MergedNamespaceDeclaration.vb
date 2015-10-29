@@ -2,7 +2,7 @@
 
 Imports System.Collections.Immutable
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
     ' An invariant of a merged declaration is that all of its children
     ' are also merged declarations.
     Friend NotInheritable Class MergedNamespaceDeclaration

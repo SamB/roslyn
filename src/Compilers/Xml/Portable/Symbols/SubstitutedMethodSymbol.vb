@@ -5,9 +5,9 @@ Imports System.Globalization
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports Microsoft.CodeAnalysis
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Symbols
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     ''' <summary>
     ''' Represents a method that has undergone type substitution. This is use for a method
@@ -561,7 +561,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
                 ' alpha-renamed type parameters.
                 Debug.Assert(container.TypeSubstitution IsNot Nothing AndAlso
                              container.TypeSubstitution.TargetGenericDefinition Is originalDefinition.ContainingSymbol)
-                Dim substitution = VisualBasic.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
+                Dim substitution = Xml.Symbols.TypeSubstitution.CreateForAlphaRename(container.TypeSubstitution,
                                                                          StaticCast(Of TypeParameterSymbol).From(newTypeParameters))
                 Debug.Assert(substitution.TargetGenericDefinition Is originalDefinition)
 

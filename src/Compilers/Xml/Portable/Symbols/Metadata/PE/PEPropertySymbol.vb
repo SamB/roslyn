@@ -7,7 +7,7 @@ Imports System.Reflection
 Imports System.Reflection.Metadata
 Imports Microsoft.Cci
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols.Metadata.PE
+Namespace Microsoft.CodeAnalysis.Xml.Symbols.Metadata.PE
 
     ''' <summary>
     ''' The class to represent all properties imported from a PE/module.

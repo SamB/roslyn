@@ -9,11 +9,11 @@ Option Strict On
 Imports System.Collections.ObjectModel
 Imports System.Text
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
+Namespace Microsoft.CodeAnalysis.Xml.Syntax.InternalSyntax
     Friend NotInheritable Class Blender
         Inherits Scanner
 
@@ -40,7 +40,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
         Private _curNodeStart As Integer
         Private _curNodeLength As Integer
 
-        Private ReadOnly _baseTreeRoot As VisualBasic.VisualBasicSyntaxNode
+        Private ReadOnly _baseTreeRoot As Xml.VisualBasicSyntaxNode
 
         ''' <summary>
         ''' preprocessor state before _currentNode
@@ -90,7 +90,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
         ''' Expand the span in the tree to encompass the
         ''' nearest statements that the span overlaps.
         ''' </summary>
-        Private Shared Function ExpandToNearestStatements(root As VisualBasic.VisualBasicSyntaxNode, span As TextSpan) As TextSpan
+        Private Shared Function ExpandToNearestStatements(root As Xml.VisualBasicSyntaxNode, span As TextSpan) As TextSpan
             Dim fullSpan = New TextSpan(0, root.FullWidth)
             Dim start = NearestStatementThatContainsPosition(root, span.Start, fullSpan)
             Debug.Assert(start.Start <= span.Start)
@@ -152,7 +152,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax
         ''' of tokens required for look ahead and the maximum
         ''' number of characters for look behind.
         ''' </summary>
-        Private Shared Function ExpandByLookAheadAndBehind(root As VisualBasic.VisualBasicSyntaxNode, span As TextSpan) As TextSpan
+        Private Shared Function ExpandByLookAheadAndBehind(root As Xml.VisualBasicSyntaxNode, span As TextSpan) As TextSpan
             Dim fullWidth = root.FullWidth
             Dim start = Math.Min(span.Start, Math.Max(0, fullWidth - 1))
             Dim [end] = span.End

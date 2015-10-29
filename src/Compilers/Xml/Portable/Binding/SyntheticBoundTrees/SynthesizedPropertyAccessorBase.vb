@@ -4,10 +4,10 @@ Imports System.Collections.Immutable
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.CodeGen
 Imports Microsoft.CodeAnalysis.Text
-Imports Microsoft.CodeAnalysis.VisualBasic.Symbols
-Imports Microsoft.CodeAnalysis.VisualBasic.Syntax
+Imports Microsoft.CodeAnalysis.Xml.Symbols
+Imports Microsoft.CodeAnalysis.Xml.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
+Namespace Microsoft.CodeAnalysis.Xml.Symbols
 
     Partial Friend MustInherit Class SynthesizedPropertyAccessorBase(Of T As PropertySymbol)
 
@@ -26,7 +26,7 @@ Namespace Microsoft.CodeAnalysis.VisualBasic.Symbols
 
             Dim propertySymbol = DirectCast(accessor.AssociatedSymbol, PropertySymbol)
 
-            Dim syntax = DirectCast(VisualBasic.VisualBasicSyntaxTree.Dummy.GetRoot(), VisualBasicSyntaxNode)
+            Dim syntax = DirectCast(Xml.VisualBasicSyntaxTree.Dummy.GetRoot(), VisualBasicSyntaxNode)
             Dim meSymbol As ParameterSymbol = Nothing
             Dim meReference As BoundExpression = Nothing
 

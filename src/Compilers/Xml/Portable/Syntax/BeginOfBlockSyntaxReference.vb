@@ -3,7 +3,7 @@
 Imports System.Threading
 Imports Microsoft.CodeAnalysis.Syntax
 
-Namespace Microsoft.CodeAnalysis.VisualBasic
+Namespace Microsoft.CodeAnalysis.Xml
     ''' <summary>
     ''' This is a SyntaxReference implementation that lazily finds the beginning of the block (if any) of the original syntax reference
     ''' </summary>
