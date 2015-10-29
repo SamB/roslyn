@@ -108,7 +108,7 @@ Friend Module Program
                     output.WriteLine("Imports System.Collections.Generic")
                     output.WriteLine("Imports System.Collections.Immutable")
                     output.WriteLine("Imports System.Runtime.CompilerServices")
-                    output.WriteLine("Imports Microsoft.CodeAnalysis.VisualBasic.Syntax")
+                    output.WriteLine("Imports " + definition.NamespaceName + ".Syntax")
                     output.WriteLine("Imports Roslyn.Utilities")
                     output.WriteLine("Imports Xunit")
 
@@ -124,7 +124,7 @@ Friend Module Program
                     output.WriteLine("Imports System.Collections.Generic")
                     output.WriteLine("Imports System.Collections.Immutable")
                     output.WriteLine("Imports System.Runtime.CompilerServices")
-                    output.WriteLine("Imports Microsoft.CodeAnalysis.VisualBasic.Syntax")
+                    output.WriteLine("Imports " + definition.NamespaceName + ".Syntax")
                     output.WriteLine("Imports Roslyn.Utilities")
 
                     Dim redNodeWriter As New RedNodeWriter(definition)
