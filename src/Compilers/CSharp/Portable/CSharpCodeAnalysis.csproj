@@ -865,7 +865,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CSharpResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <ErrorCode Include="Errors\ErrorCode.cs" />
+    <ErrorCode Include="Errors\ErrorCode.cs">
+      <CustomToolNamespace>Microsoft.CodeAnalysis.CSharp</CustomToolNamespace>
+    </ErrorCode>
     <SyntaxDefinition Include="Syntax\Syntax.xml">
       <SubType>Designer</SubType>
     </SyntaxDefinition>

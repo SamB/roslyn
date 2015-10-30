@@ -14,12 +14,13 @@ namespace Microsoft.CodeAnalysis.CSharp.Internal.CSharpErrorFactsGenerator
         {
             var args = Environment.GetCommandLineArgs();
 
-            if (args.Length != 3)
+            if (args.Length != 4)
             {
                 Console.WriteLine(
-@"Usage: {0} input output
+@"Usage: {0} input output namespace
   input     The path to ErrorCode.cs
-  output    The path to GeneratedErrorFacts.cs",
+  output    The path to GeneratedErrorFacts.cs
+  namespace The namespace in which to put the output",
                 Path.GetFileNameWithoutExtension(args[0]));
 
                 Environment.Exit(-1);
@@ -27,9 +28,10 @@ namespace Microsoft.CodeAnalysis.CSharp.Internal.CSharpErrorFactsGenerator
 
             string inputPath = args[1];
             string outputPath = args[2];
+            string nameSpace = args[3];
 
             var outputText = new StringBuilder();
-            outputText.AppendLine("namespace Microsoft.CodeAnalysis.CSharp");
+            outputText.AppendLine("namespace "+nameSpace);
             outputText.AppendLine("{");
             outputText.AppendLine("    internal static partial class ErrorFacts");
             outputText.AppendLine("    {");

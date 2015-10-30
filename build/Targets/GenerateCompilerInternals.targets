@@ -181,7 +181,7 @@
     </PropertyGroup>
 
     <Exec
-      Command='$(ErrorFactsGenerator) "@(ErrorCode)" "$(GeneratedErrorFacts)"'
+      Command='$(ErrorFactsGenerator) "@(ErrorCode)" "$(GeneratedErrorFacts)" %(CustomToolNamespace)'
       Outputs="$(GeneratedErrorFacts)"
     >
       <Output TaskParameter="Outputs" ItemName="FileWrites" />

@@ -7,20 +7,22 @@ Friend Module Program
     Public Sub Main()
         Dim args = Environment.GetCommandLineArgs()
 
-        If args.Length <> 3 Then
+        If args.Length <> 4 Then
             Console.WriteLine(
-"Usage: {0} input output
+"Usage: {0} input output namespace
   input     The path to Errors.vb
-  output    The path to ErrorFacts.Generated.vb",
+  output    The path to ErrorFacts.Generated.vb
+  namespace The namespace in which to put the output",
                 Path.GetFileNameWithoutExtension(args(0)))
             Environment.Exit(-1)
         End If
 
         Dim inputPath = args(1)
         Dim outputPath = args(2)
+        Dim _nameSpace = args(3)
 
         Dim outputText = New StringBuilder
-        outputText.AppendLine("Namespace Microsoft.CodeAnalysis.VisualBasic")
+        outputText.AppendLine("Namespace " + _nameSpace)
         outputText.AppendLine("    Friend Partial Module ErrorFacts")
 
         Dim warningCodeNames, fatalCodeNames, infoCodeNames, hiddenCodeNames As New List(Of String)

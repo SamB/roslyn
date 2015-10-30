@@ -978,11 +978,13 @@
     <Compile Include="Syntax\InternalSyntax\ChildSyntaxList.Enumerator.vb" />
     <Compile Include="Syntax\InternalSyntax\ChildSyntaxList.vb" />
     <Compile Include="Compilation\ModuleCompilationState.vb" />
-    <PublicAPI Include="PublicAPI.Shipped.txt" />
-    <PublicAPI Include="PublicAPI.Unshipped.txt" />
+    <None Include="PublicAPI.Shipped.txt" />
+    <None Include="PublicAPI.Unshipped.txt" />
     <Content Include="Symbols\SymbolsAndNoPia.docx" />
-    <ErrorCode Include="Errors\Errors.vb" />
-    <SyntaxDefinition Include="Syntax\Syntax.xml">
+      <ErrorCode Include="Errors\Errors.vb">
+          <CustomToolNamespace>Microsoft.CodeAnalysis.Xml</CustomToolNamespace>
+      </ErrorCode>
+      <SyntaxDefinition Include="Syntax\Syntax.xml">
       <SubType>Designer</SubType>
     </SyntaxDefinition>
   </ItemGroup>
