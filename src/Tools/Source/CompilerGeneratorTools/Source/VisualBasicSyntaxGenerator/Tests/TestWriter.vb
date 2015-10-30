@@ -39,7 +39,7 @@ Public Class TestWriter
 
     Private Sub GenerateNamespace()
         _writer.WriteLine()
-        _writer.WriteLine("Namespace Microsoft.CodeAnalysis.VisualBasic.UnitTests")
+        _writer.WriteLine("Namespace " + Ident(_parseTree.NamespaceName) + ".UnitTests")
         _writer.WriteLine()
 
         _writer.WriteLine("Partial Public Class GeneratedTests")

@@ -132,7 +132,7 @@ Friend Class RedNodeWriter
         '    
         '       Select Case green.Kind
         _writer.WriteLine("Partial Public MustInherit Class {0}", StructureTypeName(_parseTree.RootStructure))
-        _writer.WriteLine("    Friend Shared Function CreateRed(ByVal green As Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}, ByVal parent As {0}, ByVal startLocation As Integer) As {0}", StructureTypeName(_parseTree.RootStructure))
+        _writer.WriteLine("    Friend Shared Function CreateRed(ByVal green As " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}, ByVal parent As {0}, ByVal startLocation As Integer) As {0}", StructureTypeName(_parseTree.RootStructure))
         _writer.WriteLine("        Debug.Assert(green IsNot Nothing)")
         _writer.WriteLine("        Debug.Assert(startLocation >= 0)")
         _writer.WriteLine("")
@@ -430,7 +430,7 @@ Friend Class RedNodeWriter
 
             ' Generate call to create new builder, and pass result to my private constructor.
 
-            _writer.Write("            Me.New(New Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}(", StructureTypeName(nodeStructure))
+            _writer.Write("            Me.New(New " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}(", StructureTypeName(nodeStructure))
 
             ' Generate each of the field parameters
             _writer.Write("kind", NodeKindType())
@@ -468,7 +468,7 @@ Friend Class RedNodeWriter
                     End If
 
                     ' non-optional normal child.
-                    _writer.Write(", DirectCast({0}.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{1})", ChildParamName(child), BaseTypeReference(child))
+                    _writer.Write(", DirectCast({0}.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{1})", ChildParamName(child), BaseTypeReference(child))
 
                     If child.IsOptional Then
                         ' optional normal child.
@@ -534,7 +534,7 @@ Friend Class RedNodeWriter
 
         _writer.WriteLine("        Public {2} ReadOnly Property {0} As {1}", FieldPropertyName(field), FieldTypeRef(field), GetModifiers(field.ContainingStructure, False, field.Name))
         _writer.WriteLine("            Get")
-        _writer.WriteLine("                Return DirectCast(Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}", TypeName, FieldPropertyName(field))
+        _writer.WriteLine("                Return DirectCast(Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}", TypeName, FieldPropertyName(field))
         _writer.WriteLine("            End Get")
         _writer.WriteLine("        End Property")
         _writer.WriteLine("")
@@ -590,20 +590,20 @@ Friend Class RedNodeWriter
     Private Sub GenerateNodeChildPropertyRedAccessLogic(nodeStructure As ParseNodeStructure, child As ParseNodeChild, childIndex As Integer, isOverride As Boolean)
         If KindTypeStructure(child.ChildKind).IsToken Then
             If child.IsList Then
-                _writer.WriteLine("                Dim slot = DirectCast(Me.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
+                _writer.WriteLine("                Dim slot = DirectCast(Me.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
                 _writer.WriteLine("                If slot IsNot Nothing")
                 _writer.WriteLine("                    return new SyntaxTokenList(Me, slot, {0}, {1})", Me.GetChildPosition(childIndex), Me.GetChildIndex(childIndex))
                 _writer.WriteLine("                End If")
                 _writer.WriteLine("                Return Nothing")
             Else
                 If child.IsOptional Then
-                    _writer.WriteLine("                Dim slot = DirectCast(Me.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
+                    _writer.WriteLine("                Dim slot = DirectCast(Me.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
                     _writer.WriteLine("                If slot IsNot Nothing")
                     _writer.WriteLine("                    return new SyntaxToken(Me, slot, {0}, {1})", Me.GetChildPosition(childIndex), Me.GetChildIndex(childIndex))
                     _writer.WriteLine("                End If")
                     _writer.WriteLine("                Return Nothing")
                 Else
-                    _writer.WriteLine("                return new SyntaxToken(Me, DirectCast(Me.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}, {2}, {3})", StructureTypeName(nodeStructure), ChildVarName(child), Me.GetChildPosition(childIndex), Me.GetChildIndex(childIndex))
+                    _writer.WriteLine("                return new SyntaxToken(Me, DirectCast(Me.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}, {2}, {3})", StructureTypeName(nodeStructure), ChildVarName(child), Me.GetChildPosition(childIndex), Me.GetChildIndex(childIndex))
                 End If
             End If
         ElseIf IsListStructureType(child) Then
@@ -862,7 +862,7 @@ Friend Class RedNodeWriter
                 Dim child = children(i)
                 _writer.WriteLine("                Case {0}", i)
                 If KindTypeStructure(child.ChildKind).IsToken Then
-                    _writer.WriteLine("                    Return DirectCast(Me.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
+                    _writer.WriteLine("                    Return DirectCast(Me.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
                 ElseIf child.IsList Then
                     If (i = 0) Then
                         _writer.WriteLine("                    Return GetRedAtZero({0})", ChildVarName(child))
@@ -881,7 +881,7 @@ Friend Class RedNodeWriter
             _writer.WriteLine("            If i = 0 Then")
             Dim child = children(0)
             If KindTypeStructure(child.ChildKind).IsToken Then
-                _writer.WriteLine("                Return DirectCast(Me.Green, Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
+                _writer.WriteLine("                Return DirectCast(Me.Green, " + Ident(_parseTree.NamespaceName) + ".Syntax.InternalSyntax.{0}).{1}", StructureTypeName(nodeStructure), ChildVarName(child))
             ElseIf child.IsList Then
                 _writer.WriteLine("                Return GetRedAtZero({0})", ChildVarName(child))
             Else
