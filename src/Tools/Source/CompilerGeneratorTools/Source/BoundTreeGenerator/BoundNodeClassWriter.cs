@@ -28,12 +28,31 @@ namespace BoundTreeGenerator
         private readonly Dictionary<string, string> _typeMap;
         private Dictionary<string, bool> _valueTypes;
         private readonly TargetLanguage _targetLang;
+        private readonly string _nameSpace;
+
+        public string NameSpace
+        {
+            get {
+                if (_nameSpace != null)
+                    return _nameSpace;
+                switch (_targetLang)
+                {
+                    case TargetLanguage.VB:
+                        return "Microsoft.CodeAnalysis.VisualBasic";
+                    case TargetLanguage.CSharp:
+                        return "Microsoft.CodeAnalysis.CSharp";
+                    default:
+                        throw new ApplicationException("Unexpected target language");
+                }
+            }
+        }
 
         private BoundNodeClassWriter(TextWriter writer, Tree tree, TargetLanguage targetLang)
         {
             _writer = writer;
             _tree = tree;
             _targetLang = targetLang;
+            _nameSpace = tree.NameSpace;
             _typeMap = tree.Types.Where(t => !(t is EnumType || t is ValueType)).ToDictionary(n => n.Name, n => n.Base);
             _typeMap.Add(tree.Root, null);
 
@@ -192,22 +211,19 @@ namespace BoundTreeGenerator
 
         private void WriteStartNamespace()
         {
+            WriteUsing("Microsoft.CodeAnalysis.Text");
+            WriteUsing(NameSpace + ".Symbols");
+            WriteUsing(NameSpace + ".Syntax");
+            Blank();
+
             switch (_targetLang)
             {
                 case TargetLanguage.CSharp:
-                    WriteLine("using Microsoft.CodeAnalysis.Text;");
-                    WriteLine("using Microsoft.CodeAnalysis.CSharp.Symbols;");
-                    WriteLine("using Microsoft.CodeAnalysis.CSharp.Syntax;");
-                    Blank();
-                    WriteLine("namespace Microsoft.CodeAnalysis.CSharp");
+                    WriteLine("namespace " + NameSpace);
                     Brace();
                     break;
                 case TargetLanguage.VB:
-                    WriteLine("Imports Microsoft.CodeAnalysis.Text");
-                    WriteLine("Imports Microsoft.CodeAnalysis.VisualBasic.Symbols");
-                    WriteLine("Imports Microsoft.CodeAnalysis.VisualBasic.Syntax");
-                    Blank();
-                    WriteLine("Namespace Microsoft.CodeAnalysis.VisualBasic");
+                    WriteLine("Namespace " + NameSpace);
                     Indent();
                     break;
                 default:

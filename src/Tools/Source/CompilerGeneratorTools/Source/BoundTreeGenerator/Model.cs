@@ -11,6 +11,9 @@ namespace BoundTreeGenerator
         [XmlAttribute]
         public string Root;
 
+        [XmlAttribute]
+        public string NameSpace;
+
         [XmlElement(ElementName = "Node", Type = typeof(Node))]
         [XmlElement(ElementName = "AbstractNode", Type = typeof(AbstractNode))]
         [XmlElement(ElementName = "PredefinedNode", Type = typeof(PredefinedNode))]
