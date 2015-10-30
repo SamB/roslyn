@@ -15,7 +15,7 @@
  is indicated via a "ValueType" declaration.
 -->
 
-<Tree Root="BoundNode">
+<Tree Root="BoundNode" NameSpace="Microsoft.CodeAnalysis.Xml">
 
     <!-- ImmutableArray is handled specially - do not list it here even though its a value type. -->
     <ValueType Name="ConversionKind"/>
