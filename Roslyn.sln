@@ -82,7 +82,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpSyntaxGenerator", "sr
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VisualBasicSyntaxGenerator", "src\Tools\Source\CompilerGeneratorTools\Source\VisualBasicSyntaxGenerator\VisualBasicSyntaxGenerator.vbproj", "{6AA96934-D6B7-4CC8-990D-DB6B9DD56E34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesTest", "src\Workspaces\CoreTest\ServicesTest.csproj", "{C50166F1-BABC-40A9-95EB-8200080CD701}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesTest.Desktop", "src\Workspaces\CoreTest.Desktop\ServicesTest.Desktop.csproj", "{C50166F1-BABC-40A9-95EB-8200080CD701}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpServicesTest", "src\Workspaces\CSharpTest\CSharpServicesTest.csproj", "{E195A63F-B5A4-4C5A-96BD-8E7ED6A181B7}"
 EndProject
