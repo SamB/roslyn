@@ -44,6 +44,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MefHostServicesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
