@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalysisTest", "src\Compilers\Core\CodeAnalysisTest\CodeAnalysisTest.csproj", "{A4C99B85-765C-4C65-9C2A-BB609AAB09E6}"
 EndProject
@@ -354,6 +354,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuildTask.Desktop", "src\
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MSBuildTask.Shared", "src\Compilers\Core\MSBuildTask\Shared\MSBuildTask.Shared.shproj", "{D87F0E46-DD1B-46EA-8425-9E185D9B602E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{D3DDB2C4-6C6E-429B-95C6-3E364961CBFD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BasicAnalyzerDriver", "src\Compilers\Xml\BasicAnalyzerDriver\BasicAnalyzerDriver.shproj", "{A87A9C24-E4A2-43C3-AD9C-77751C7765B7}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BasicCodeAnalysis", "src\Compilers\Xml\Portable\BasicCodeAnalysis.vbproj", "{2AEFF554-D31E-496D-BC20-1D1F15B63005}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Test\Utilities\Shared\TestUtilities.projitems*{76c6f005-c89d-4348-bb4a-391898dbeb52}*SharedItemsImports = 4
@@ -373,6 +379,7 @@ Global
 		src\ExpressionEvaluator\Core\Source\ResultProvider\ResultProvider.projitems*{bb3ca047-5d00-48d4-b7d3-233c1265c065}*SharedItemsImports = 13
 		src\Test\Utilities\Shared\TestUtilities.projitems*{6ff42825-5464-4151-ac55-ed828168c192}*SharedItemsImports = 13
 		src\Compilers\Core\SharedCollections\SharedCollections.projitems*{5f8d2414-064a-4b3a-9b42-8e2a04246be5}*SharedItemsImports = 4
+		src\Compilers\Xml\BasicAnalyzerDriver\BasicAnalyzerDriver.projitems*{2aeff554-d31e-496d-bc20-1d1f15b63005}*SharedItemsImports = 4
 		src\Compilers\Core\CommandLine\CommandLine.projitems*{ad6f474e-e6d4-4217-91f3-b7af1be31ccc}*SharedItemsImports = 13
 		src\Compilers\VisualBasic\BasicAnalyzerDriver\BasicAnalyzerDriver.projitems*{e8f0baa5-7327-43d1-9a51-644e81ae55f1}*SharedItemsImports = 13
 		src\Compilers\Core\AnalyzerDriver\AnalyzerDriver.projitems*{d0bc9be7-24f6-40ca-8dc6-fcb93bd44b34}*SharedItemsImports = 13
@@ -386,7 +393,9 @@ Global
 		src\ExpressionEvaluator\CSharp\Source\ResultProvider\CSharpResultProvider.projitems*{bf9dac1e-3a5e-4dc3-bb44-9a64e0d4e9d3}*SharedItemsImports = 4
 		src\Compilers\Core\SharedCollections\SharedCollections.projitems*{afde6bea-5038-4a4a-a88e-dbd2e4088eed}*SharedItemsImports = 4
 		src\ExpressionEvaluator\Core\Source\ResultProvider\ResultProvider.projitems*{fa0e905d-ec46-466d-b7b2-3b5557f9428c}*SharedItemsImports = 4
+		src\Compilers\Xml\BasicAnalyzerDriver\BasicAnalyzerDriver.projitems*{a87a9c24-e4a2-43c3-ad9c-77751c7765b7}*SharedItemsImports = 13
 		src\Compilers\Core\AnalyzerDriver\AnalyzerDriver.projitems*{1ee8cad3-55f9-4d91-96b2-084641da9a6c}*SharedItemsImports = 4
+		src\Compilers\Core\SharedCollections\SharedCollections.projitems*{1ee8cad3-55f9-4d91-96b2-084641da9a6c}*SharedItemsImports = 4
 		src\Compilers\Core\CommandLine\CommandLine.projitems*{7ad4fe65-9a30-41a6-8004-aa8f89bcb7f3}*SharedItemsImports = 4
 		src\Compilers\Core\MSBuildTask\Shared\MSBuildTask.Shared.projitems*{7ad4fe65-9a30-41a6-8004-aa8f89bcb7f3}*SharedItemsImports = 4
 		src\Compilers\CSharp\CSharpAnalyzerDriver\CSharpAnalyzerDriver.projitems*{3973b09a-4fbf-44a5-8359-3d22ceb71f71}*SharedItemsImports = 4
@@ -3086,6 +3095,26 @@ Global
 		{D874349C-8BB3-4BDC-8535-2D52CCCA1198}.Release|x64.Build.0 = Release|Any CPU
 		{D874349C-8BB3-4BDC-8535-2D52CCCA1198}.Release|x86.ActiveCfg = Release|Any CPU
 		{D874349C-8BB3-4BDC-8535-2D52CCCA1198}.Release|x86.Build.0 = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|x64.Build.0 = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Debug|x86.Build.0 = Debug|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|ARM.Build.0 = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|x64.ActiveCfg = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|x64.Build.0 = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|x86.ActiveCfg = Release|Any CPU
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3252,5 +3281,8 @@ Global
 		{7AD4FE65-9A30-41A6-8004-AA8F89BCB7F3} = {A41D1B99-F489-4C43-BBDF-96D61B19A6B9}
 		{D874349C-8BB3-4BDC-8535-2D52CCCA1198} = {A41D1B99-F489-4C43-BBDF-96D61B19A6B9}
 		{D87F0E46-DD1B-46EA-8425-9E185D9B602E} = {A41D1B99-F489-4C43-BBDF-96D61B19A6B9}
+		{D3DDB2C4-6C6E-429B-95C6-3E364961CBFD} = {3F40F71B-7DCF-44A1-B15C-38CA34824143}
+		{A87A9C24-E4A2-43C3-AD9C-77751C7765B7} = {D3DDB2C4-6C6E-429B-95C6-3E364961CBFD}
+		{2AEFF554-D31E-496D-BC20-1D1F15B63005} = {D3DDB2C4-6C6E-429B-95C6-3E364961CBFD}
 	EndGlobalSection
 EndGlobal
