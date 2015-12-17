@@ -42,7 +42,7 @@ Namespace Microsoft.CodeAnalysis.Xml
         ''' <param name="scriptClassName">An optional parameter to specify an alternate DefaultScriptClassName object to be used.</param>
         ''' <param name="globalImports">An optional collection of GlobalImports <see cref="GlobalImports"/> .</param>
         ''' <param name="rootNamespace">An optional parameter to specify the name of the default root namespace.</param>
-        ''' <param name="optionStrict">An optional parameter to specify the default Option Strict behavior. <see cref="VisualBasic.OptionStrict"/></param>
+        ''' <param name="optionStrict">An optional parameter to specify the default Option Strict behavior. <see cref="Xml.OptionStrict"/></param>
         ''' <param name="optionInfer">An optional parameter to specify default Option Infer behavior.</param>
         ''' <param name="optionExplicit">An optional parameter to specify the default Option Explicit behavior.</param>
         ''' <param name="optionCompareText">An optional parameter to specify the default Option Compare Text behavior.</param>
@@ -468,7 +468,7 @@ Namespace Microsoft.CodeAnalysis.Xml
         ''' <summary>
         ''' Creates a new VisualBasicCompilationOptions instance with a different option strict specified.
         ''' </summary>
-        ''' <param name="value">The Option Strict setting.  <see cref="Microsoft.CodeAnalysis.VisualBasic.OptionStrict"/></param>        
+        ''' <param name="value">The Option Strict setting.  <see cref="Microsoft.CodeAnalysis.Xml.OptionStrict"/></param>        
         ''' <returns>A new instance of VisualBasicCompilationOptions, if the option strict is different; otherwise current instance.</returns>        
         Public Shadows Function WithOptionStrict(value As OptionStrict) As VisualBasicCompilationOptions
             If value = Me.OptionStrict Then
@@ -786,7 +786,7 @@ Namespace Microsoft.CodeAnalysis.Xml
         ''' <summary>
         ''' Creates a new <see cref="VisualBasicCompilationOptions"/> instance with a different parse option specified.
         ''' </summary>
-        ''' <param name="options">The parse option setting. <see cref="Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions"/></param>        
+        ''' <param name="options">The parse option setting. <see cref="Microsoft.CodeAnalysis.Xml.VisualBasicParseOptions"/></param>        
         ''' <returns>A new instance of VisualBasicCompilationOptions, if the parse options is different; otherwise current instance.</returns>        
         Public Function WithParseOptions(options As VisualBasicParseOptions) As VisualBasicCompilationOptions
             If options Is Me.ParseOptions Then
